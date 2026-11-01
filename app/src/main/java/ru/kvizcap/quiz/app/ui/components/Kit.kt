@@ -77,6 +77,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.material3.Text
@@ -231,7 +232,7 @@ fun Pill(text: String, bg: Color, fg: Color, modifier: Modifier = Modifier, styl
         horizontalArrangement = Arrangement.spacedBy(6.dp),
     ) {
         leading?.invoke()
-        Text(text, style = style, color = fg, maxLines = 1)
+        Text(text, style = style, color = fg, maxLines = 1, overflow = TextOverflow.Ellipsis)
     }
 }
 
@@ -296,7 +297,7 @@ fun TopBar(title: String, onBack: () -> Unit, modifier: Modifier = Modifier, tra
         horizontalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         RoundIconButton(Glyphs.BACK, onBack)
-        Text(title, style = Type.titleSmall, color = App.c.ink, modifier = Modifier.weight(1f), maxLines = 1)
+        Text(title, style = Type.titleSmall, color = App.c.ink, modifier = Modifier.weight(1f), maxLines = 1, overflow = TextOverflow.Ellipsis)
         trailing()
     }
 }

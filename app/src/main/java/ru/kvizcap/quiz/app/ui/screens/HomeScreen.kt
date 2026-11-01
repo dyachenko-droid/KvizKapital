@@ -26,6 +26,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import ru.kvizcap.quiz.app.core.Career
 import ru.kvizcap.quiz.app.core.Economy
@@ -214,8 +215,8 @@ private fun ModeTile(title: String, sub: String, d: String, bg: androidx.compose
     Card(modifier.pressable(onClick = onClick), padding = androidx.compose.foundation.layout.PaddingValues(12.dp)) {
         IconBubble(d, bg, fg, 38.dp, 12.dp, 20.dp)
         Spacer(Modifier.height(8.dp))
-        Text(title, style = Type.label.copy(fontSize = androidx.compose.ui.unit.TextUnit(14f, androidx.compose.ui.unit.TextUnitType.Sp)), color = c.ink, maxLines = 1)
-        Text(sub, style = Type.tiny.copy(fontSize = androidx.compose.ui.unit.TextUnit(12f, androidx.compose.ui.unit.TextUnitType.Sp)), color = c.ink2, maxLines = 1)
+        Text(title, style = Type.label.copy(fontSize = androidx.compose.ui.unit.TextUnit(14f, androidx.compose.ui.unit.TextUnitType.Sp)), color = c.ink, maxLines = 1, overflow = TextOverflow.Ellipsis)
+        Text(sub, style = Type.tiny.copy(fontSize = androidx.compose.ui.unit.TextUnit(12f, androidx.compose.ui.unit.TextUnitType.Sp)), color = c.ink2, maxLines = 1, overflow = TextOverflow.Ellipsis)
     }
 }
 

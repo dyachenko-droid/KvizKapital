@@ -18,7 +18,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -36,6 +35,7 @@ import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import ru.kvizcap.quiz.app.core.Economy
 import ru.kvizcap.quiz.app.core.Glyphs
@@ -128,10 +128,12 @@ fun ProgressScreen(state: AppState, dispatch: (Intent) -> Unit) {
             if (rows.isEmpty()) Text(stringResource(R.string.stats_empty), style = Type.small, color = c.ink2)
             rows.forEach { (tp, st) ->
                 val color = when { st.accuracy >= 80 -> c.mint; st.accuracy >= 60 -> c.gold; else -> c.coral }
-                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Text(stringResource(tp.title), style = Type.small, color = c.ink, modifier = Modifier.width(118.dp), maxLines = 1)
-                    Bar(st.accuracy / 100f, color, Modifier.weight(1f), height = 10.dp)
-                    Text("${st.accuracy}%", style = Type.numberSmall, color = c.ink, modifier = Modifier.width(42.dp))
+                Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        Text(stringResource(tp.title), style = Type.small, color = c.ink, modifier = Modifier.weight(1f), maxLines = 1, overflow = TextOverflow.Ellipsis)
+                        Text("${st.accuracy}%", style = Type.numberSmall, color = c.ink)
+                    }
+                    Bar(st.accuracy / 100f, color, Modifier.fillMaxWidth(), height = 8.dp)
                 }
             }
         }

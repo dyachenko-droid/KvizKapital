@@ -53,6 +53,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import ru.kvizcap.quiz.app.core.ArtMeta
 import ru.kvizcap.quiz.app.core.Career
@@ -284,7 +285,7 @@ private fun BuildingContent(state: AppState, cellIndex: Int, dispatch: (Intent) 
     Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
         StatBox(stringResource(R.string.income), money(income), stringResource(R.string.per_day), c.pri, Modifier.weight(1f))
         Column(Modifier.weight(1f).clip(RoundedCornerShape(18.dp)).background(c.surface2).padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Text(stringResource(R.string.stored_cap, fmt(cap)), style = Type.tiny, color = c.ink2, maxLines = 1)
+            Text(stringResource(R.string.stored_cap, fmt(cap)), style = Type.tiny, color = c.ink2, maxLines = 1, overflow = TextOverflow.Ellipsis)
             Text(money(stored), style = Type.number, color = c.ink)
             ru.kvizcap.quiz.app.ui.components.Bar(if (cap > 0) stored.toFloat() / cap else 0f, c.gold, Modifier.fillMaxWidth(), c.line, 5.dp)
         }

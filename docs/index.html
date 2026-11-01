@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>КвизКапитал: политика конфиденциальности</title>
+<meta name="description" content="Privacy policy of the KvizKapital app (ru.kvizcap.quiz.app)">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F4F1E8;
+  --surface: #FFFDF7;
+  --surface-2: #EEF4EE;
+  --ink: #10261C;
+  --ink-2: #4B5F55;
+  --line: #E2DFD2;
+  --emerald: #0E6B47;
+  --emerald-deep: #07402A;
+  --emerald-ink: #0B5A3B;
+  --gold: #E9B44C;
+  --gold-deep: #B9842A;
+  --gold-soft: #FBEFD3;
+  --gold-ink: #7A5410;
+  --shadow: 0 1px 2px rgba(16,38,28,.06), 0 10px 28px rgba(16,38,28,.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #07130D;
+    --surface: #0E1E16;
+    --surface-2: #13281D;
+    --ink: #EAF2EC;
+    --ink-2: #9DB3A6;
+    --line: #1E3629;
+    --emerald: #3FBF85;
+    --emerald-deep: #05271A;
+    --emerald-ink: #7FDDB0;
+    --gold: #F0C266;
+    --gold-deep: #E9B44C;
+    --gold-soft: #2E2410;
+    --gold-ink: #F3CF84;
+    --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #07130D;
+  --surface: #0E1E16;
+  --surface-2: #13281D;
+  --ink: #EAF2EC;
+  --ink-2: #9DB3A6;
+  --line: #1E3629;
+  --emerald: #3FBF85;
+  --emerald-deep: #05271A;
+  --emerald-ink: #7FDDB0;
+  --gold: #F0C266;
+  --gold-deep: #E9B44C;
+  --gold-soft: #2E2410;
+  --gold-ink: #F3CF84;
+  --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.3);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 16px/1.65 "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Armenian", "Noto Sans", sans-serif;
+}
+a { color: var(--emerald-ink); text-underline-offset: 3px; }
+.display { font-family: "Unbounded", "Manrope", "Noto Sans Armenian", system-ui, sans-serif; }
+:lang(hy) .display { font-family: "Noto Sans Armenian", "Manrope", system-ui, sans-serif; font-weight: 700; }
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: #F6F1E1;
+  background:
+    radial-gradient(90% 120% at 100% 0%, rgba(233,180,76,.28) 0%, rgba(233,180,76,0) 55%),
+    linear-gradient(160deg, #0E6B47 0%, #07402A 70%, #052E1F 100%);
+  padding: 20px 16px 84px;
+}
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='32' viewBox='0 0 64 32'%3E%3Cpath d='M32 0 64 16 32 32 0 16Z' fill='none' stroke='%23F6E7C1' stroke-opacity='.09' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 64px 32px;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.9), rgba(0,0,0,.15));
+  mask-image: linear-gradient(180deg, rgba(0,0,0,.9), rgba(0,0,0,.15));
+  pointer-events: none;
+}
+.wrap { position: relative; max-width: 860px; margin: 0 auto; }
+.bar { display: flex; align-items: center; gap: 12px; }
+.bar img { width: 44px; height: 44px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,.3); }
+.bar .app { font-size: 16px; font-weight: 700; letter-spacing: .01em; }
+.bar .pkg { font-size: 12px; opacity: .65; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.head { margin-top: 44px; max-width: 680px; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--gold);
+}
+.eyebrow::before { content: ""; width: 22px; height: 2px; border-radius: 2px; background: var(--gold); }
+.head h1 { margin: 12px 0 14px; font-size: clamp(26px, 6vw, 42px); line-height: 1.12; font-weight: 700; letter-spacing: -.01em; }
+.head p { margin: 0; color: rgba(246,241,225,.84); font-size: 17px; }
+.date {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
+  font-size: 13px; font-weight: 600;
+  padding: 7px 14px; border-radius: 999px;
+  background: rgba(233,180,76,.16); color: #F6DFA6;
+  border: 1px solid rgba(233,180,76,.35);
+}
+.langs {
+  display: flex; gap: 8px; margin-top: 28px;
+  overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch;
+}
+.langs::-webkit-scrollbar { display: none; }
+.langs button {
+  flex: none; height: 36px; padding: 0 14px;
+  border-radius: 18px; border: 1px solid rgba(246,241,225,.22);
+  background: rgba(255,255,255,.06); color: #F6F1E1;
+  font: 600 14px/1 "Manrope", system-ui, "Noto Sans Armenian", sans-serif; cursor: pointer;
+}
+.langs button:hover { background: rgba(255,255,255,.14); }
+.langs button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.langs button[aria-pressed="true"] { background: #E9B44C; border-color: #E9B44C; color: #2B1D04; }
+main { max-width: 860px; margin: -52px auto 0; padding: 0 16px 56px; position: relative; }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.fact {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
+  padding: 18px; box-shadow: var(--shadow);
+}
+.fact .ic {
+  width: 42px; height: 42px; border-radius: 14px;
+  display: grid; place-items: center; margin-bottom: 12px;
+  background: var(--surface-2); color: var(--emerald-ink);
+}
+.fact .ic svg { width: 22px; height: 22px; }
+.fact .ic.coin {
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #F7D58A 0%, #E9B44C 55%, #B9842A 100%);
+  color: #3A2705; font: 700 18px/1 "Unbounded", "Manrope", sans-serif;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,.18), 0 3px 10px rgba(185,132,42,.35);
+}
+.fact h3 { margin: 0 0 4px; font-size: 16px; font-weight: 700; line-height: 1.3; }
+.fact p { margin: 0; color: var(--ink-2); font-size: 14px; line-height: 1.55; }
+section {
+  margin-top: 14px;
+  display: grid; grid-template-columns: 56px minmax(0,1fr); gap: 4px 16px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
+  padding: 22px 22px 16px;
+}
+section .n {
+  grid-row: span 2;
+  font-size: 26px; font-weight: 700; line-height: 1; color: var(--gold-deep);
+  padding-top: 2px;
+}
+section h2 { margin: 0 0 6px; font-size: 19px; font-weight: 700; line-height: 1.3; }
+section .body { grid-column: 2; }
+section p { margin: 0 0 10px; color: var(--ink-2); }
+section ul { margin: 0 0 10px; padding: 0; list-style: none; }
+section li { position: relative; padding: 5px 0 5px 24px; color: var(--ink-2); }
+section li::before {
+  content: ""; position: absolute; left: 3px; top: 13px;
+  width: 9px; height: 9px; transform: rotate(45deg); border-radius: 2px;
+  background: var(--emerald);
+}
+.perm { display: grid; gap: 10px; margin-bottom: 10px; }
+.perm div {
+  background: var(--gold-soft); border-radius: 14px; padding: 12px 14px; color: var(--ink-2);
+  border-left: 3px solid var(--gold);
+}
+.perm b { display: block; color: var(--ink); font-weight: 700; margin-bottom: 2px; }
+section.capital { background: linear-gradient(135deg, var(--surface) 0%, var(--surface) 55%, var(--gold-soft) 100%); }
+footer { margin-top: 28px; text-align: center; color: var(--ink-2); font-size: 13px; }
+footer code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+@media (min-width: 720px) {
+  .langs { flex-wrap: wrap; overflow: visible; }
+}
+@media (max-width: 560px) {
+  .facts { grid-template-columns: minmax(0,1fr); }
+  section { grid-template-columns: minmax(0,1fr); padding: 18px 16px 12px; }
+  section .n { grid-row: auto; font-size: 20px; }
+  section .body { grid-column: 1; }
+  .bar .pkg { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="bar">
+      <img src="icon.png" alt="">
+      <div><div class="app display" id="app"></div><div class="pkg">ru.kvizcap.quiz.app</div></div>
+    </div>
+    <div class="head">
+      <span class="eyebrow">Privacy</span>
+      <h1 class="display" id="title"></h1>
+      <p id="lead"></p>
+      <span class="date" id="updated"></span>
+    </div>
+    <div class="langs" id="langs" role="group" aria-label="Language"></div>
+  </div>
+</header>
+<main>
+  <div class="facts" id="facts"></div>
+  <div id="sections"></div>
+  <footer><span id="foot"></span> <code>ru.kvizcap.quiz.app</code></footer>
+</main>
+<script>
+const ISSUES = "https://github.com/dyachenko-droid/KvizKapital/issues";
+const ICONS = ["<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 8.8a15 15 0 0 1 4.2-2.6M10.7 5.1A15 15 0 0 1 22 8.8M5 12.5a10 10 0 0 1 5.2-2.7M16.8 10.9a10 10 0 0 1 2.2 1.6M8.5 16a5 5 0 0 1 7 0M12 20h.01M3 3l18 18\"/></svg>", "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21c0-4 3.6-7 8-7s8 3 8 7\"/><path d=\"M3 3l18 18\"/></svg>", "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 6h15l-1.6 8.2a2 2 0 0 1-2 1.6H8.6a2 2 0 0 1-2-1.6L5 3H2\"/><circle cx=\"9\" cy=\"20\" r=\"1.3\"/><circle cx=\"17\" cy=\"20\" r=\"1.3\"/><path d=\"M3 3l18 18\"/></svg>", "COIN"];
+const L = {
+ "ru": {
+  "name": "Русский",
+  "app": "КвизКапитал",
+  "coin": "К",
+  "title": "Политика конфиденциальности",
+  "lead": "В викторине по финансовой грамотности КвизКапитал за правильные ответы вы получаете игровой капитал и строите на него свой квартал. Приложение работает полностью на вашем устройстве. Здесь описано, что оно хранит и чего никогда не делает.",
+  "updated": "Действует с 1 ноября 2026 г.",
+  "facts": [
+   [
+    "Без интернета",
+    "У приложения нет разрешения на доступ к сети, поэтому оно не может никуда отправить данные."
+   ],
+   [
+    "Без аккаунта",
+    "Не нужны регистрация, почта или номер телефона. Имя в профиле можно придумать любое."
+   ],
+   [
+    "Без рекламы и покупок",
+    "Нет рекламы, аналитики, трекеров и платного контента."
+   ],
+   [
+    "Капитал игровой",
+    "Капитал К нельзя купить, продать или вывести. Это не настоящие деньги."
+   ]
+  ],
+  "s": [
+   [
+    "Что хранит приложение",
+    "В закрытом хранилище приложения на вашем устройстве сохраняется только игровой профиль:",
+    [
+     "имя и аватар, которые вы выбрали в начале, и интересующие темы",
+     "игровой капитал, постройки и благоустройство квартала",
+     "прогресс карьеры, звёзды, достижения и серия вопроса дня",
+     "статистика ответов и список вопросов с ошибками для повторения",
+     "настройки: тема, звук, вибрация, таймер, сложность и язык"
+    ],
+    "Облачное резервное копирование Android для приложения отключено, поэтому профиль не копируется на серверы Google."
+   ],
+   [
+    "Игровой капитал",
+    "Капитал К существует только внутри игры. Его нельзя купить за деньги, обменять или вывести, и за пределами приложения он ничего не стоит. Вопросы и объяснения носят образовательный характер и не являются индивидуальной финансовой, налоговой или инвестиционной рекомендацией."
+   ],
+   [
+    "Разрешения",
+    "Приложение запрашивает только одно разрешение:",
+    null,
+    null,
+    [
+     [
+      "Вибрация",
+      "для тактильного отклика на ответы и кнопки. Её можно выключить в настройках."
+     ]
+    ]
+   ],
+   [
+    "Передача третьим лицам",
+    "Приложение не продаёт, не передаёт и не раскрывает ваши данные. В нём нет рекламы, аналитики, сборщиков ошибок и сторонних SDK, собирающих данные. Шрифты и картинки встроены в приложение и не загружаются из сети."
+   ],
+   [
+    "Хранение и удаление",
+    "Профиль хранится, пока вы сами его не удалите. В настройках есть кнопка \"Сбросить прогресс\", которая стирает капитал, квартал, карьеру и достижения. При удалении приложения или очистке его данных всё стирается безвозвратно."
+   ],
+   [
+    "Дети",
+    "Приложение рассчитано на взрослых, не предназначено для детей младше 13 лет и сознательно не собирает никаких персональных данных."
+   ],
+   [
+    "Изменения политики",
+    "Если политика изменится, новая версия будет опубликована на этой странице с новой датой."
+   ],
+   [
+    "Связь",
+    "Вопросы о конфиденциальности можно задать, создав обращение в репозитории проекта:"
+   ]
+  ]
+ },
+ "en": {
+  "name": "English",
+  "app": "KvizKapital",
+  "coin": "K",
+  "title": "Privacy Policy",
+  "lead": "KvizKapital is a financial literacy quiz: correct answers earn you game capital that you spend on building your own city quarter. The app runs entirely on your device. This policy explains what it stores and what it never does.",
+  "updated": "Effective date: November 1, 2026",
+  "facts": [
+   [
+    "No internet access",
+    "The app has no network permission, so it cannot send data anywhere."
+   ],
+   [
+    "No account",
+    "No sign-up, email or phone number. The profile name can be anything you like."
+   ],
+   [
+    "No ads or purchases",
+    "No advertising, analytics, trackers or paid content."
+   ],
+   [
+    "Game capital only",
+    "Capital K cannot be bought, sold or withdrawn. It is not real money."
+   ]
+  ],
+  "s": [
+   [
+    "What the app stores",
+    "Only your game profile is saved, in the app's private storage on your device:",
+    [
+     "the name, avatar and topics of interest you picked at the start",
+     "game capital, buildings and decorations in your quarter",
+     "career progress, stars, achievements and the daily question streak",
+     "answer statistics and the list of missed questions for review",
+     "settings: theme, sound, vibration, timer, difficulty and language"
+    ],
+    "Android cloud backup is turned off for the app, so the profile is not copied to Google servers."
+   ],
+   [
+    "Game capital",
+    "Capital K exists only inside the game. It cannot be bought with money, exchanged or withdrawn, and it has no value outside the app. Questions and explanations are educational and are not personal financial, tax or investment advice."
+   ],
+   [
+    "Permissions",
+    "The app requests a single permission:",
+    null,
+    null,
+    [
+     [
+      "Vibration",
+      "for haptic feedback on answers and buttons. It can be turned off in Settings."
+     ]
+    ]
+   ],
+   [
+    "Sharing with third parties",
+    "The app does not sell, share or disclose your data. It contains no advertising, analytics, crash reporting or third-party SDKs that collect data. Fonts and images are bundled with the app and are not downloaded from the network."
+   ],
+   [
+    "Storage and deletion",
+    "The profile is kept until you delete it. The \"Reset progress\" button in Settings erases capital, the quarter, career and achievements. Uninstalling the app or clearing its data erases everything permanently."
+   ],
+   [
+    "Children",
+    "The app is made for adults, is not directed at children under 13 and does not knowingly collect any personal information."
+   ],
+   [
+    "Changes to this policy",
+    "If the policy changes, the new version will be published on this page with an updated date."
+   ],
+   [
+    "Contact",
+    "Questions about privacy can be raised by opening an issue in the project repository:"
+   ]
+  ]
+ },
+ "be": {
+  "name": "Беларуская",
+  "app": "КвізКапітал",
+  "coin": "К",
+  "title": "Палітыка прыватнасці",
+  "lead": "У віктарыне па фінансавай пісьменнасці КвізКапітал за правільныя адказы вы атрымліваеце гульнявы капітал і будуеце на яго свой квартал. Праграма цалкам працуе на вашай прыладзе. Тут апісана, што яна захоўвае і чаго ніколі не робіць.",
+  "updated": "Дзейнічае з 1 лістапада 2026 г.",
+  "facts": [
+   [
+    "Без інтэрнэту",
+    "У праграмы няма дазволу на доступ да сеткі, таму яна не можа нікуды адправіць даныя."
+   ],
+   [
+    "Без акаўнта",
+    "Не патрэбныя рэгістрацыя, пошта ці нумар тэлефона. Імя ў профілі можна прыдумаць любое."
+   ],
+   [
+    "Без рэкламы і пакупак",
+    "Няма рэкламы, аналітыкі, трэкераў і платнага кантэнту."
+   ],
+   [
+    "Капітал гульнявы",
+    "Капітал К нельга купіць, прадаць ці вывесці. Гэта не сапраўдныя грошы."
+   ]
+  ],
+  "s": [
+   [
+    "Што захоўвае праграма",
+    "У закрытым сховішчы праграмы на вашай прыладзе захоўваецца толькі гульнявы профіль:",
+    [
+     "імя і аватар, якія вы выбралі ў пачатку, і цікавыя вам тэмы",
+     "гульнявы капітал, будынкі і добраўпарадкаванне квартала",
+     "прагрэс кар'еры, зоркі, дасягненні і серыя пытання дня",
+     "статыстыка адказаў і спіс пытанняў з памылкамі для паўтору",
+     "налады: тэма, гук, вібрацыя, таймер, складанасць і мова"
+    ],
+    "Воблачнае рэзервовае капіраванне Android для праграмы адключана, таму профіль не капіруецца на серверы Google."
+   ],
+   [
+    "Гульнявы капітал",
+    "Капітал К існуе толькі ўнутры гульні. Яго нельга купіць за грошы, абмяняць ці вывесці, і за межамі праграмы ён нічога не варты. Пытанні і тлумачэнні маюць адукацыйны характар і не з'яўляюцца індывідуальнай фінансавай, падатковай ці інвестыцыйнай рэкамендацыяй."
+   ],
+   [
+    "Дазволы",
+    "Праграма запытвае толькі адзін дазвол:",
+    null,
+    null,
+    [
+     [
+      "Вібрацыя",
+      "для тактыльнага водгуку на адказы і кнопкі. Яе можна выключыць у наладах."
+     ]
+    ]
+   ],
+   [
+    "Перадача трэцім асобам",
+    "Праграма не прадае, не перадае і не раскрывае вашы даныя. У ёй няма рэкламы, аналітыкі, зборшчыкаў памылак і старонніх SDK, якія збіраюць даныя. Шрыфты і выявы ўбудаваныя ў праграму і не загружаюцца з сеткі."
+   ],
+   [
+    "Захоўванне і выдаленне",
+    "Профіль захоўваецца, пакуль вы самі яго не выдаліце. У наладах ёсць кнопка \"Скінуць прагрэс\", якая сцірае капітал, квартал, кар'еру і дасягненні. Пры выдаленні праграмы ці ачыстцы яе даных усё сціраецца беззваротна."
+   ],
+   [
+    "Дзеці",
+    "Праграма разлічана на дарослых, не прызначана для дзяцей да 13 гадоў і свядома не збірае ніякіх асабістых даных."
+   ],
+   [
+    "Змены палітыкі",
+    "Калі палітыка зменіцца, новая версія будзе апублікавана на гэтай старонцы з новай датай."
+   ],
+   [
+    "Сувязь",
+    "Пытанні пра прыватнасць можна задаць, стварыўшы зварот у рэпазіторыі праекта:"
+   ]
+  ]
+ },
+ "kk": {
+  "name": "Қазақша",
+  "app": "КвизКапитал",
+  "coin": "К",
+  "title": "Құпиялылық саясаты",
+  "lead": "КвизКапитал қаржылық сауаттылық викторинасында дұрыс жауаптар үшін ойын капиталын аласыз және оған өз орамыңызды саласыз. Қолданба толығымен құрылғыңызда жұмыс істейді. Мұнда оның не сақтайтыны және ешқашан не істемейтіні сипатталған.",
+  "updated": "2026 жылғы 1 қарашадан бастап күшінде",
+  "facts": [
+   [
+    "Интернетсіз",
+    "Қолданбада желіге қол жеткізу рұқсаты жоқ, сондықтан ол деректерді ешқайда жібере алмайды."
+   ],
+   [
+    "Аккаунтсыз",
+    "Тіркелу, пошта немесе телефон нөмірі қажет емес. Профильдегі атты кез келген етіп ойлап табуға болады."
+   ],
+   [
+    "Жарнамасыз және сатып алусыз",
+    "Жарнама, аналитика, трекерлер және ақылы контент жоқ."
+   ],
+   [
+    "Капитал ойындық",
+    "К капиталын сатып алуға, сатуға немесе шығаруға болмайды. Бұл нақты ақша емес."
+   ]
+  ],
+  "s": [
+   [
+    "Қолданба нені сақтайды",
+    "Құрылғыңыздағы қолданбаның жабық қоймасында тек ойын профилі сақталады:",
+    [
+     "басында таңдаған атыңыз бен аватарыңыз және қызықтыратын тақырыптар",
+     "ойын капиталы, орамдағы ғимараттар мен абаттандыру",
+     "мансап барысы, жұлдыздар, жетістіктер және күн сұрағының сериясы",
+     "жауаптар статистикасы және қайталауға арналған қате сұрақтар тізімі",
+     "баптаулар: түс тақырыбы, дыбыс, діріл, таймер, күрделілік және тіл"
+    ],
+    "Қолданба үшін Android бұлттық сақтық көшірмесі өшірілген, сондықтан профиль Google серверлеріне көшірілмейді."
+   ],
+   [
+    "Ойын капиталы",
+    "К капиталы тек ойын ішінде бар. Оны ақшаға сатып алуға, айырбастауға немесе шығаруға болмайды, қолданбадан тыс оның ешқандай құны жоқ. Сұрақтар мен түсіндірмелер білім беру сипатында және жеке қаржылық, салықтық немесе инвестициялық кеңес болып табылмайды."
+   ],
+   [
+    "Рұқсаттар",
+    "Қолданба тек бір рұқсат сұрайды:",
+    null,
+    null,
+    [
+     [
+      "Діріл",
+      "жауаптар мен батырмаларға тактильді жауап үшін. Оны баптауларда өшіруге болады."
+     ]
+    ]
+   ],
+   [
+    "Үшінші тұлғаларға беру",
+    "Қолданба деректеріңізді сатпайды, бермейді және ашпайды. Онда жарнама, аналитика, қате жинаушылар және деректер жинайтын бөгде SDK жоқ. Қаріптер мен суреттер қолданбаға кірістірілген және желіден жүктелмейді."
+   ],
+   [
+    "Сақтау және жою",
+    "Профиль оны өзіңіз жойғанша сақталады. Баптауларда капиталды, орамды, мансапты және жетістіктерді өшіретін \"Прогресті тастау\" батырмасы бар. Қолданбаны жойғанда немесе оның деректерін тазалағанда бәрі біржола өшіріледі."
+   ],
+   [
+    "Балалар",
+    "Қолданба ересектерге арналған, 13 жасқа толмаған балаларға арналмаған және ешқандай жеке деректерді әдейі жинамайды."
+   ],
+   [
+    "Саясаттың өзгеруі",
+    "Саясат өзгерсе, жаңа нұсқасы осы бетте жаңа күнімен жарияланады."
+   ],
+   [
+    "Байланыс",
+    "Құпиялылық туралы сұрақтарды жоба репозиторийінде өтініш жасау арқылы қоюға болады:"
+   ]
+  ]
+ },
+ "ky": {
+  "name": "Кыргызча",
+  "app": "КвизКапитал",
+  "coin": "К",
+  "title": "Купуялуулук саясаты",
+  "lead": "КвизКапитал финансылык сабаттуулук викторинасында туура жооптор үчүн оюн капиталын аласыз жана ага өз кварталыңызды курасыз. Колдонмо толугу менен түзмөгүңүздө иштейт. Бул жерде анын эмнени сактаары жана эч качан эмне кылбасы баяндалган.",
+  "updated": "2026-жылдын 1-ноябрынан тартып күчүндө",
+  "facts": [
+   [
+    "Интернетсиз",
+    "Колдонмодо тармакка кирүү уруксаты жок, ошондуктан ал маалыматты эч жакка жөнөтө албайт."
+   ],
+   [
+    "Аккаунтсуз",
+    "Катталуу, почта же телефон номери керек эмес. Профилдеги атты каалагандай ойлоп тапсаңыз болот."
+   ],
+   [
+    "Жарнамасыз жана сатып алуусуз",
+    "Жарнама, аналитика, трекерлер жана акы төлөнүүчү контент жок."
+   ],
+   [
+    "Капитал оюндук",
+    "К капиталын сатып алууга, сатууга же чыгарып алууга болбойт. Бул чыныгы акча эмес."
+   ]
+  ],
+  "s": [
+   [
+    "Колдонмо эмнени сактайт",
+    "Түзмөгүңүздөгү колдонмонун жабык сактагычында оюн профили гана сакталат:",
+    [
+     "башында тандаган атыңыз, аватарыңыз жана кызыккан темалар",
+     "оюн капиталы, кварталдагы имараттар жана жасалгалар",
+     "карьерадагы жылыш, жылдыздар, жетишкендиктер жана күндүн суроосунун сериясы",
+     "жооптордун статистикасы жана кайталоо үчүн ката кеткен суроолордун тизмеси",
+     "жөндөөлөр: тема, үн, титирөө, таймер, татаалдык жана тил"
+    ],
+    "Колдонмо үчүн Android булуттагы камдык көчүрмөсү өчүрүлгөн, ошондуктан профиль Google серверлерине көчүрүлбөйт."
+   ],
+   [
+    "Оюн капиталы",
+    "К капиталы оюндун ичинде гана бар. Аны акчага сатып алууга, алмаштырууга же чыгарып алууга болбойт жана колдонмодон тышкары анын эч кандай баасы жок. Суроолор жана түшүндүрмөлөр билим берүү максатында жана жеке финансылык, салыктык же инвестициялык кеңеш болуп саналбайт."
+   ],
+   [
+    "Уруксаттар",
+    "Колдонмо бир гана уруксат сурайт:",
+    null,
+    null,
+    [
+     [
+      "Титирөө",
+      "жооптор жана баскычтар үчүн тактилдик жооп катары. Аны жөндөөлөрдөн өчүрсөңүз болот."
+     ]
+    ]
+   ],
+   [
+    "Үчүнчү жактарга берүү",
+    "Колдонмо маалыматыңызды сатпайт, бербейт жана ачыкка чыгарбайт. Анда жарнама, аналитика, ката чогултуучулар жана маалымат чогултуучу башка SDK жок. Шрифттер жана сүрөттөр колдонмого орнотулган жана тармактан жүктөлбөйт."
+   ],
+   [
+    "Сактоо жана өчүрүү",
+    "Профиль аны өзүңүз өчүргөнгө чейин сакталат. Жөндөөлөрдө капиталды, кварталды, карьераны жана жетишкендиктерди өчүрүүчү \"Прогрессти тазалоо\" баскычы бар. Колдонмону өчүргөндө же анын маалыматын тазалаганда баары биротоло өчөт."
+   ],
+   [
+    "Балдар",
+    "Колдонмо чоңдорго арналган, 13 жашка чейинки балдарга арналган эмес жана эч кандай жеке маалыматты атайылап чогултпайт."
+   ],
+   [
+    "Саясаттын өзгөрүшү",
+    "Саясат өзгөрсө, жаңы версиясы ушул баракта жаңы күнү менен жарыяланат."
+   ],
+   [
+    "Байланыш",
+    "Купуялуулук боюнча суроолорду долбоордун репозиторийинде кайрылуу түзүп берсеңиз болот:"
+   ]
+  ]
+ },
+ "uz": {
+  "name": "Oʻzbekcha",
+  "app": "KvizKapital",
+  "coin": "K",
+  "title": "Maxfiylik siyosati",
+  "lead": "KvizKapital moliyaviy savodxonlik viktorinasida toʻgʻri javoblar uchun oʻyin kapitalini olasiz va unga oʻz mahallangizni qurasiz. Ilova toʻliq qurilmangizda ishlaydi. Bu yerda u nimani saqlashi va hech qachon nima qilmasligi tasvirlangan.",
+  "updated": "2026-yil 1-noyabrdan amalda",
+  "facts": [
+   [
+    "Internetsiz",
+    "Ilovada tarmoqqa kirish ruxsati yoʻq, shuning uchun u maʼlumotlarni hech qayerga yubora olmaydi."
+   ],
+   [
+    "Akkauntsiz",
+    "Roʻyxatdan oʻtish, pochta yoki telefon raqami kerak emas. Profildagi ismni xohlagancha oʻylab topish mumkin."
+   ],
+   [
+    "Reklama va xaridlarsiz",
+    "Reklama, analitika, trekerlar va pullik kontent yoʻq."
+   ],
+   [
+    "Kapital faqat oʻyinda",
+    "K kapitalini sotib olish, sotish yoki yechib olish mumkin emas. Bu haqiqiy pul emas."
+   ]
+  ],
+  "s": [
+   [
+    "Ilova nimani saqlaydi",
+    "Qurilmangizdagi ilovaning yopiq xotirasida faqat oʻyin profili saqlanadi:",
+    [
+     "boshida tanlagan ismingiz, avataringiz va qiziqarli mavzular",
+     "oʻyin kapitali, mahalladagi binolar va obodonlashtirish",
+     "martabadagi taraqqiyot, yulduzlar, yutuqlar va kun savoli seriyasi",
+     "javoblar statistikasi va takrorlash uchun xato qilingan savollar roʻyxati",
+     "sozlamalar: mavzu, ovoz, tebranish, taymer, qiyinlik va til"
+    ],
+    "Ilova uchun Android bulutli zaxira nusxasi oʻchirilgan, shuning uchun profil Google serverlariga koʻchirilmaydi."
+   ],
+   [
+    "Oʻyin kapitali",
+    "K kapitali faqat oʻyin ichida mavjud. Uni pulga sotib olish, almashtirish yoki yechib olish mumkin emas va ilovadan tashqarida uning hech qanday qiymati yoʻq. Savollar va izohlar taʼlimiy xususiyatga ega va shaxsiy moliyaviy, soliq yoki investitsiya maslahati hisoblanmaydi."
+   ],
+   [
+    "Ruxsatlar",
+    "Ilova faqat bitta ruxsat soʻraydi:",
+    null,
+    null,
+    [
+     [
+      "Tebranish",
+      "javoblar va tugmalarga taktil javob uchun. Uni sozlamalarda oʻchirish mumkin."
+     ]
+    ]
+   ],
+   [
+    "Uchinchi shaxslarga berish",
+    "Ilova maʼlumotlaringizni sotmaydi, bermaydi va oshkor qilmaydi. Unda reklama, analitika, xato yigʻuvchilar va maʼlumot yigʻuvchi uchinchi tomon SDK lari yoʻq. Shriftlar va rasmlar ilovaga oʻrnatilgan va tarmoqdan yuklanmaydi."
+   ],
+   [
+    "Saqlash va oʻchirish",
+    "Profil siz uni oʻchirmaguningizcha saqlanadi. Sozlamalarda kapital, mahalla, martaba va yutuqlarni oʻchiradigan \"Natijalarni oʻchirish\" tugmasi bor. Ilovani oʻchirganda yoki uning maʼlumotlarini tozalaganda hammasi butunlay oʻchiriladi."
+   ],
+   [
+    "Bolalar",
+    "Ilova kattalar uchun moʻljallangan, 13 yoshgacha boʻlgan bolalar uchun emas va hech qanday shaxsiy maʼlumotni ataylab yigʻmaydi."
+   ],
+   [
+    "Siyosatdagi oʻzgarishlar",
+    "Siyosat oʻzgarsa, yangi versiyasi shu sahifada yangi sana bilan eʼlon qilinadi."
+   ],
+   [
+    "Aloqa",
+    "Maxfiylik boʻyicha savollarni loyiha repozitoriysida murojaat yaratib berish mumkin:"
+   ]
+  ]
+ },
+ "tg": {
+  "name": "Тоҷикӣ",
+  "app": "КвизКапитал",
+  "coin": "К",
+  "title": "Сиёсати махфият",
+  "lead": "Дар викторинаи саводнокии молиявии КвизКапитал барои ҷавобҳои дуруст шумо капитали бозӣ мегиред ва бо он маҳаллаи худро месозед. Барнома пурра дар дастгоҳи шумо кор мекунад. Дар ин ҷо гуфта шудааст, ки он чиро нигоҳ медорад ва ҳеҷ гоҳ чӣ кор намекунад.",
+  "updated": "Аз 1 ноябри соли 2026 амал мекунад",
+  "facts": [
+   [
+    "Бе интернет",
+    "Барнома иҷозати дастрасӣ ба шабака надорад, бинобар ин маълумотро ба ҳеҷ ҷо фиристода наметавонад."
+   ],
+   [
+    "Бе ҳисоб",
+    "Бақайдгирӣ, почта ё рақами телефон лозим нест. Номи профилро ҳар чӣ хоҳед, гузоштан мумкин аст."
+   ],
+   [
+    "Бе реклама ва харидҳо",
+    "Реклама, таҳлилгар, трекерҳо ва мундариҷаи пулакӣ нест."
+   ],
+   [
+    "Капитал бозӣ аст",
+    "Капитали К-ро харидан, фурӯхтан ё баровардан мумкин нест. Ин пули воқеӣ нест."
+   ]
+  ],
+  "s": [
+   [
+    "Барнома чиро нигоҳ медорад",
+    "Дар анбори пӯшидаи барнома дар дастгоҳи шумо танҳо профили бозӣ нигоҳ дошта мешавад:",
+    [
+     "ном ва аватаре, ки дар аввал интихоб кардед, ва мавзӯъҳои шавқовар",
+     "капитали бозӣ, биноҳо ва ободонии маҳалла",
+     "пешрафти мансаб, ситораҳо, дастовардҳо ва силсилаи саволи рӯз",
+     "омори ҷавобҳо ва рӯйхати саволҳои хато барои такрор",
+     "танзимот: мавзӯъ, садо, ларзиш, таймер, душворӣ ва забон"
+    ],
+    "Нусхабардории абрии Android барои барнома хомӯш аст, бинобар ин профил ба серверҳои Google нусхабардорӣ намешавад."
+   ],
+   [
+    "Капитали бозӣ",
+    "Капитали К танҳо дар дохили бозӣ вуҷуд дорад. Онро бо пул харидан, иваз кардан ё баровардан мумкин нест ва берун аз барнома ҳеҷ арзише надорад. Саволҳо ва шарҳҳо хусусияти таълимӣ доранд ва маслиҳати шахсии молиявӣ, андозӣ ё сармоягузорӣ нестанд."
+   ],
+   [
+    "Иҷозатҳо",
+    "Барнома танҳо як иҷозат талаб мекунад:",
+    null,
+    null,
+    [
+     [
+      "Ларзиш",
+      "барои вокуниши ламсӣ ба ҷавобҳо ва тугмаҳо. Онро дар танзимот хомӯш кардан мумкин аст."
+     ]
+    ]
+   ],
+   [
+    "Додан ба шахсони сеюм",
+    "Барнома маълумоти шуморо намефурӯшад, намедиҳад ва ошкор намекунад. Дар он реклама, таҳлилгар, ҷамъкунандагони хатоҳо ва SDK-ҳои бегонае, ки маълумот ҷамъ мекунанд, нестанд. Шрифтҳо ва тасвирҳо дар худи барнома ҷойгиранд ва аз шабака бор карда намешаванд."
+   ],
+   [
+    "Нигоҳдорӣ ва нест кардан",
+    "Профил то он даме нигоҳ дошта мешавад, ки худатон онро нест кунед. Дар танзимот тугмаи \"Тоза кардани пешрафт\" ҳаст, ки капитал, маҳалла, мансаб ва дастовардҳоро пок мекунад. Ҳангоми нест кардани барнома ё тоза кардани маълумоти он ҳама чиз бебозгашт пок мешавад."
+   ],
+   [
+    "Кӯдакон",
+    "Барнома барои калонсолон пешбинӣ шудааст, барои кӯдакони то 13-сола нест ва ягон маълумоти шахсиро дидаю дониста ҷамъ намекунад."
+   ],
+   [
+    "Тағйироти сиёсат",
+    "Агар сиёсат тағйир ёбад, нусхаи нав дар ҳамин саҳифа бо санаи нав нашр мешавад."
+   ],
+   [
+    "Тамос",
+    "Саволҳо дар бораи махфиятро бо сохтани муроҷиат дар анбори лоиҳа додан мумкин аст:"
+   ]
+  ]
+ },
+ "az": {
+  "name": "Azərbaycanca",
+  "app": "KvizKapital",
+  "coin": "K",
+  "title": "Məxfilik siyasəti",
+  "lead": "KvizKapital maliyyə savadlılığı viktorinasında düzgün cavablar üçün oyun kapitalı qazanır və onunla öz məhəllənizi tikirsiniz. Tətbiq tamamilə cihazınızda işləyir. Burada onun nəyi saxladığı və heç vaxt nə etmədiyi təsvir olunur.",
+  "updated": "1 noyabr 2026-cı ildən qüvvədədir",
+  "facts": [
+   [
+    "İnternetsiz",
+    "Tətbiqin şəbəkəyə giriş icazəsi yoxdur, buna görə məlumatları heç yerə göndərə bilməz."
+   ],
+   [
+    "Hesabsız",
+    "Qeydiyyat, e-poçt və ya telefon nömrəsi lazım deyil. Profildəki adı istədiyiniz kimi seçə bilərsiniz."
+   ],
+   [
+    "Reklamsız və alışsız",
+    "Reklam, analitika, izləyicilər və ödənişli məzmun yoxdur."
+   ],
+   [
+    "Kapital oyundaxilidir",
+    "K kapitalını almaq, satmaq və ya çıxarmaq olmaz. Bu, real pul deyil."
+   ]
+  ],
+  "s": [
+   [
+    "Tətbiq nəyi saxlayır",
+    "Cihazınızdakı tətbiqin qapalı yaddaşında yalnız oyun profili saxlanılır:",
+    [
+     "başlanğıcda seçdiyiniz ad, avatar və maraqlandığınız mövzular",
+     "oyun kapitalı, məhəllədəki binalar və abadlaşdırma",
+     "karyera irəliləyişi, ulduzlar, nailiyyətlər və günün sualı seriyası",
+     "cavab statistikası və təkrar üçün səhv cavablandırılmış suallar siyahısı",
+     "ayarlar: tema, səs, vibrasiya, taymer, çətinlik və dil"
+    ],
+    "Tətbiq üçün Android bulud ehtiyat nüsxəsi söndürülüb, buna görə profil Google serverlərinə köçürülmür."
+   ],
+   [
+    "Oyun kapitalı",
+    "K kapitalı yalnız oyun daxilində mövcuddur. Onu pulla almaq, dəyişmək və ya çıxarmaq olmaz və tətbiqdən kənarda heç bir dəyəri yoxdur. Suallar və izahlar maarifləndirici xarakter daşıyır və fərdi maliyyə, vergi və ya investisiya məsləhəti deyil."
+   ],
+   [
+    "İcazələr",
+    "Tətbiq yalnız bir icazə istəyir:",
+    null,
+    null,
+    [
+     [
+      "Vibrasiya",
+      "cavablara və düymələrə toxunma reaksiyası üçün. Onu ayarlarda söndürmək olar."
+     ]
+    ]
+   ],
+   [
+    "Üçüncü tərəflərə ötürmə",
+    "Tətbiq məlumatlarınızı satmır, ötürmür və açıqlamır. Onda reklam, analitika, xəta toplayıcıları və məlumat toplayan üçüncü tərəf SDK-ları yoxdur. Şriftlər və şəkillər tətbiqə daxil edilib və şəbəkədən yüklənmir."
+   ],
+   [
+    "Saxlama və silmə",
+    "Profil siz onu silənə qədər saxlanılır. Ayarlarda kapitalı, məhəlləni, karyeranı və nailiyyətləri silən \"İrəliləyişi sıfırla\" düyməsi var. Tətbiqi sildikdə və ya onun məlumatlarını təmizlədikdə hər şey birdəfəlik silinir."
+   ],
+   [
+    "Uşaqlar",
+    "Tətbiq böyüklər üçün nəzərdə tutulub, 13 yaşdan kiçik uşaqlar üçün deyil və heç bir şəxsi məlumatı qəsdən toplamır."
+   ],
+   [
+    "Siyasətdə dəyişikliklər",
+    "Siyasət dəyişərsə, yeni versiya bu səhifədə yeni tarixlə dərc olunacaq."
+   ],
+   [
+    "Əlaqə",
+    "Məxfiliklə bağlı sualları layihənin repozitoriyasında müraciət yaradaraq verə bilərsiniz:"
+   ]
+  ]
+ },
+ "hy": {
+  "name": "Հայերեն",
+  "app": "KvizKapital",
+  "coin": "K",
+  "title": "Գաղտնիության քաղաքականություն",
+  "lead": "KvizKapital ֆինանսական գրագիտության վիկտորինայում ճիշտ պատասխանների համար ստանում եք խաղային կապիտալ և դրանով կառուցում ձեր թաղամասը։ Հավելվածն ամբողջությամբ աշխատում է ձեր սարքում։ Այստեղ նկարագրված է, թե ինչ է այն պահում և ինչ երբեք չի անում։",
+  "updated": "Գործում է 2026 թ. նոյեմբերի 1-ից",
+  "facts": [
+   [
+    "Առանց ինտերնետի",
+    "Հավելվածը ցանցին միանալու թույլտվություն չունի, ուստի չի կարող տվյալներ ուղարկել որևէ տեղ։"
+   ],
+   [
+    "Առանց հաշվի",
+    "Գրանցում, էլ. փոստ կամ հեռախոսահամար պետք չէ։ Պրոֆիլի անունը կարող եք ընտրել ցանկացածը։"
+   ],
+   [
+    "Առանց գովազդի և գնումների",
+    "Չկան գովազդ, վերլուծություն, հետագծիչներ և վճարովի բովանդակություն։"
+   ],
+   [
+    "Կապիտալը խաղային է",
+    "K կապիտալը հնարավոր չէ գնել, վաճառել կամ դուրս բերել։ Դա իրական փող չէ։"
+   ]
+  ],
+  "s": [
+   [
+    "Ինչ է պահում հավելվածը",
+    "Ձեր սարքում՝ հավելվածի փակ պահոցում, պահվում է միայն խաղային պրոֆիլը։",
+    [
+     "սկզբում ընտրած անունը, ավատարը և հետաքրքրող թեմաները",
+     "խաղային կապիտալը, թաղամասի շենքերը և բարեկարգումը",
+     "կարիերայի առաջընթացը, աստղերը, նվաճումները և օրվա հարցի շարքը",
+     "պատասխանների վիճակագրությունը և սխալված հարցերի ցանկը՝ կրկնելու համար",
+     "կարգավորումները՝ թեմա, ձայն, թրթռոց, ժամաչափ, բարդություն և լեզու"
+    ],
+    "Android-ի ամպային պահուստավորումը հավելվածի համար անջատված է, ուստի պրոֆիլը չի պատճենվում Google-ի սերվերներ։"
+   ],
+   [
+    "Խաղային կապիտալ",
+    "K կապիտալը գոյություն ունի միայն խաղի ներսում։ Այն հնարավոր չէ գնել փողով, փոխանակել կամ դուրս բերել, և հավելվածից դուրս այն որևէ արժեք չունի։ Հարցերը և բացատրությունները կրթական բնույթ ունեն և անհատական ֆինանսական, հարկային կամ ներդրումային խորհուրդ չեն։"
+   ],
+   [
+    "Թույլտվություններ",
+    "Հավելվածը խնդրում է միայն մեկ թույլտվություն։",
+    null,
+    null,
+    [
+     [
+      "Թրթռոց",
+      "պատասխանների և կոճակների շոշափելի արձագանքի համար։ Այն կարելի է անջատել կարգավորումներում։"
+     ]
+    ]
+   ],
+   [
+    "Փոխանցում երրորդ անձանց",
+    "Հավելվածը չի վաճառում, չի փոխանցում և չի բացահայտում ձեր տվյալները։ Դրանում չկան գովազդ, վերլուծություն, սխալների հավաքիչներ և տվյալներ հավաքող երրորդ կողմի SDK-ներ։ Տառատեսակները և պատկերները ներկառուցված են հավելվածում և ցանցից չեն ներբեռնվում։"
+   ],
+   [
+    "Պահպանում և ջնջում",
+    "Պրոֆիլը պահվում է, քանի դեռ դուք ինքներդ այն չեք ջնջել։ Կարգավորումներում կա \"Զրոյացնել առաջընթացը\" կոճակը, որը ջնջում է կապիտալը, թաղամասը, կարիերան և նվաճումները։ Հավելվածը ջնջելիս կամ դրա տվյալները մաքրելիս ամեն ինչ անվերադարձ ջնջվում է։"
+   ],
+   [
+    "Երեխաներ",
+    "Հավելվածը նախատեսված է մեծահասակների համար, նախատեսված չէ 13 տարեկանից փոքր երեխաների համար և դիտավորյալ չի հավաքում որևէ անձնական տվյալ։"
+   ],
+   [
+    "Քաղաքականության փոփոխություններ",
+    "Եթե քաղաքականությունը փոխվի, նոր տարբերակը կհրապարակվի այս էջում՝ նոր ամսաթվով։"
+   ],
+   [
+    "Կապ",
+    "Գաղտնիության վերաբերյալ հարցերը կարող եք տալ՝ ստեղծելով դիմում նախագծի պահոցում։"
+   ]
+  ]
+ },
+ "ro": {
+  "name": "Română",
+  "app": "KvizKapital",
+  "coin": "K",
+  "title": "Politica de confidențialitate",
+  "lead": "În quizul de educație financiară KvizKapital primești capital de joc pentru răspunsurile corecte și îți construiești cu el propriul cartier. Aplicația funcționează în întregime pe dispozitivul tău. Aici este descris ce păstrează și ce nu face niciodată.",
+  "updated": "În vigoare din 1 noiembrie 2026",
+  "facts": [
+   [
+    "Fără internet",
+    "Aplicația nu are permisiunea de acces la rețea, așa că nu poate trimite date nicăieri."
+   ],
+   [
+    "Fără cont",
+    "Nu e nevoie de înregistrare, e-mail sau număr de telefon. Numele din profil poate fi oricare."
+   ],
+   [
+    "Fără reclame și cumpărături",
+    "Nu există reclame, analiză, trackere sau conținut plătit."
+   ],
+   [
+    "Capital doar de joc",
+    "Capitalul K nu poate fi cumpărat, vândut sau retras. Nu sunt bani reali."
+   ]
+  ],
+  "s": [
+   [
+    "Ce păstrează aplicația",
+    "În spațiul privat al aplicației de pe dispozitivul tău se salvează doar profilul de joc:",
+    [
+     "numele, avatarul și temele de interes alese la început",
+     "capitalul de joc, clădirile și amenajările cartierului",
+     "progresul în carieră, stelele, realizările și seria întrebării zilei",
+     "statistica răspunsurilor și lista întrebărilor greșite pentru repetare",
+     "setările: tema, sunetul, vibrația, cronometrul, dificultatea și limba"
+    ],
+    "Copierea de rezervă în cloud a Android este dezactivată pentru aplicație, așa că profilul nu este copiat pe serverele Google."
+   ],
+   [
+    "Capitalul de joc",
+    "Capitalul K există doar în joc. Nu poate fi cumpărat cu bani, schimbat sau retras și nu are nicio valoare în afara aplicației. Întrebările și explicațiile au caracter educativ și nu reprezintă consultanță financiară, fiscală sau de investiții personalizată."
+   ],
+   [
+    "Permisiuni",
+    "Aplicația cere o singură permisiune:",
+    null,
+    null,
+    [
+     [
+      "Vibrație",
+      "pentru feedback tactil la răspunsuri și butoane. Poate fi oprită din setări."
+     ]
+    ]
+   ],
+   [
+    "Transmiterea către terți",
+    "Aplicația nu vinde, nu transmite și nu dezvăluie datele tale. Nu conține reclame, analiză, colectoare de erori sau SDK-uri terțe care colectează date. Fonturile și imaginile sunt incluse în aplicație și nu se descarcă din rețea."
+   ],
+   [
+    "Păstrare și ștergere",
+    "Profilul se păstrează până când îl ștergi tu. În setări există butonul \"Resetează progresul\", care șterge capitalul, cartierul, cariera și realizările. La dezinstalarea aplicației sau ștergerea datelor ei totul se șterge definitiv."
+   ],
+   [
+    "Copii",
+    "Aplicația este făcută pentru adulți, nu se adresează copiilor sub 13 ani și nu colectează în mod intenționat date personale."
+   ],
+   [
+    "Modificări ale politicii",
+    "Dacă politica se schimbă, noua versiune va fi publicată pe această pagină cu o dată nouă."
+   ],
+   [
+    "Contact",
+    "Întrebările despre confidențialitate pot fi adresate deschizând o solicitare în depozitul proiectului:"
+   ]
+  ]
+ }
+};
+const ORDER = ["ru", "en", "be", "kk", "ky", "uz", "tg", "az", "hy", "ro"];
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function pick() {
+  const q = new URLSearchParams(location.search).get("lang");
+  if (q && L[q]) return q;
+  try { const s = localStorage.getItem("kk-privacy-lang"); if (s && L[s]) return s; } catch (e) {}
+  for (const l of navigator.languages || [navigator.language || ""]) {
+    const base = l.toLowerCase().split("-")[0];
+    if (base === "mo") return "ro";
+    if (L[base]) return base;
+  }
+  return "ru";
+}
+
+function render(code) {
+  const t = L[code];
+  document.documentElement.lang = code;
+  document.title = t.app + ": " + t.title;
+  $("app").textContent = t.app;
+  $("foot").textContent = t.app + " 1.0";
+  $("title").textContent = t.title;
+  $("lead").textContent = t.lead;
+  $("updated").textContent = t.updated;
+  $("facts").innerHTML = t.facts.map((f, i) => {
+    const ic = ICONS[i] === "COIN" ? '<div class="ic coin">' + esc(t.coin) + "</div>" : '<div class="ic">' + ICONS[i] + "</div>";
+    return '<div class="fact">' + ic + "<h3>" + esc(f[0]) + "</h3><p>" + esc(f[1]) + "</p></div>";
+  }).join("");
+  $("sections").innerHTML = t.s.map((s, i) => {
+    let body = "";
+    if (s[1]) body += "<p>" + esc(s[1]) + "</p>";
+    if (s[2]) body += "<ul>" + s[2].map(x => "<li>" + esc(x) + "</li>").join("") + "</ul>";
+    if (s[3]) body += "<p>" + esc(s[3]) + "</p>";
+    if (s[4]) body += '<div class="perm">' + s[4].map(p => "<div><b>" + esc(p[0]) + "</b>" + esc(p[1]) + "</div>").join("") + "</div>";
+    if (i === t.s.length - 1) body += '<p><a href="' + ISSUES + '" rel="noopener">' + ISSUES.replace("https://", "") + "</a></p>";
+    const n = String(i + 1).padStart(2, "0");
+    return '<section' + (i === 1 ? ' class="capital"' : "") + '><div class="n display">' + n + "</div><h2>" + esc(s[0]) + '</h2><div class="body">' + body + "</div></section>";
+  }).join("");
+  $("langs").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === code));
+}
+
+function setLang(code) {
+  try { localStorage.setItem("kk-privacy-lang", code); } catch (e) {}
+  const u = new URL(location.href);
+  u.searchParams.set("lang", code);
+  history.replaceState(null, "", u);
+  render(code);
+}
+
+$("langs").innerHTML = ORDER.map(c =>
+  '<button type="button" data-lang="' + c + '" lang="' + c + '">' + esc(L[c].name) + "</button>").join("");
+$("langs").addEventListener("click", e => { const b = e.target.closest("button"); if (b) setLang(b.dataset.lang); });
+render(pick());
+</script>
+</body>
+</html>

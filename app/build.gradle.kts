@@ -1,6 +1,7 @@
 import java.util.Properties
 
 plugins {
+    alias(libs.plugins.google.services)
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
@@ -25,8 +26,11 @@ android {
         versionName = "1.0"
     }
 
+    val hasReleaseSigning = listOf("storeFile", "storePassword", "keyAlias", "keyPassword")
+        .all { !keystoreProps.getProperty(it).isNullOrBlank() }
+
     signingConfigs {
-        create("release") {
+        if (hasReleaseSigning) create("release") {
             storeFile = file(keystoreProps["storeFile"] as String)
             storePassword = keystoreProps["storePassword"] as String
             keyAlias = keystoreProps["keyAlias"] as String
@@ -40,7 +44,7 @@ android {
                 enable = true
             }
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigs.getByName("release")
+            if (hasReleaseSigning) signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
@@ -49,6 +53,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     androidResources {
         localeFilters += listOf("ru", "en", "be", "kk", "ky", "uz", "tg", "az", "hy", "ro")
@@ -56,6 +61,15 @@ android {
 }
 
 dependencies {
+    implementation(libs.appsflyer)
+    implementation(libs.installreferrer)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.database)
+    implementation(libs.onesignal.notifications)
+    implementation(libs.onesignal.core)
+    implementation(libs.kotlinx.coroutines.android)
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

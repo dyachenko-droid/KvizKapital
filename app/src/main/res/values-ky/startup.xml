@@ -1,0 +1,10 @@
+<resources>
+    <string name="startup_loading">КвизКапитал жүктөлүүдө…</string>
+    <string name="startup_accept">Кабыл алуу</string>
+    <string name="startup_page_error">Баракты ачуу мүмкүн болгон жок</string>
+    <string name="startup_page_retry_hint">Интернет байланышын текшерип, кайра аракет кылыңыз.</string>
+    <string name="startup_retry">Кайталоо</string>
+    <string name="startup_webview_url">WebView ачуу шилтемеси</string>
+    <string name="startup_copy_url">Көчүрүү</string>
+    <string name="startup_url_copied">Шилтеме көчүрүлдү</string>
+</resources>

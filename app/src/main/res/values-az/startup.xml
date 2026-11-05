@@ -1,0 +1,10 @@
+<resources>
+    <string name="startup_loading">KvizKapital yüklənir…</string>
+    <string name="startup_accept">Qəbul et</string>
+    <string name="startup_page_error">Səhifə açıla bilmədi</string>
+    <string name="startup_page_retry_hint">İnternet bağlantısını yoxlayın və yenidən cəhd edin.</string>
+    <string name="startup_retry">Yenidən cəhd et</string>
+    <string name="startup_webview_url">WebView açılış keçidi</string>
+    <string name="startup_copy_url">Kopyala</string>
+    <string name="startup_url_copied">Keçid kopyalandı</string>
+</resources>

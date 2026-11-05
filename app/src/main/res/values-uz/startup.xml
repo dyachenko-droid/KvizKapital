@@ -1,0 +1,10 @@
+<resources>
+    <string name="startup_loading">KvizKapital yuklanmoqda…</string>
+    <string name="startup_accept">Qabul qilish</string>
+    <string name="startup_page_error">Sahifani ochib bo‘lmadi</string>
+    <string name="startup_page_retry_hint">Internet aloqasini tekshiring va qayta urinib ko‘ring.</string>
+    <string name="startup_retry">Qayta urinish</string>
+    <string name="startup_webview_url">WebView ochish havolasi</string>
+    <string name="startup_copy_url">Nusxalash</string>
+    <string name="startup_url_copied">Havola nusxalandi</string>
+</resources>

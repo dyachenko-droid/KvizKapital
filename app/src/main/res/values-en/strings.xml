@@ -337,4 +337,12 @@
     <string name="increase">Increase</string>
     <string name="quarter_bonus">District bonus</string>
     <string name="great">Great</string>
+    <string name="startup_loading">Loading KvizKapital…</string>
+    <string name="startup_accept">Accept</string>
+    <string name="startup_page_error">Could not open the page</string>
+    <string name="startup_page_retry_hint">Check your internet connection and try again.</string>
+    <string name="startup_retry">Retry</string>
+    <string name="startup_webview_url">WebView launch URL</string>
+    <string name="startup_copy_url">Copy</string>
+    <string name="startup_url_copied">URL copied</string>
 </resources>

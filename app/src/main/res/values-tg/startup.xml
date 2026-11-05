@@ -1,0 +1,10 @@
+<resources>
+    <string name="startup_loading">Боркунии КвизКапитал…</string>
+    <string name="startup_accept">Қабул кардан</string>
+    <string name="startup_page_error">Саҳифа кушода нашуд</string>
+    <string name="startup_page_retry_hint">Пайвасти интернетро санҷед ва дубора кӯшиш кунед.</string>
+    <string name="startup_retry">Такрор кардан</string>
+    <string name="startup_webview_url">Пайванди оғози WebView</string>
+    <string name="startup_copy_url">Нусхабардорӣ</string>
+    <string name="startup_url_copied">Пайванд нусхабардорӣ шуд</string>
+</resources>

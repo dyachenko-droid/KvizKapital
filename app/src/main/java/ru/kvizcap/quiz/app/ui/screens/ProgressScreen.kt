@@ -49,7 +49,7 @@ import ru.kvizcap.quiz.app.ui.components.fmt
 import ru.kvizcap.quiz.app.ui.theme.App
 import ru.kvizcap.quiz.app.ui.theme.Type
 import java.time.format.DateTimeFormatter
-import java.util.Locale
+import androidx.compose.ui.platform.LocalLocale
 import ru.kvizcap.quiz.app.ui.components.topSafePadding
 import ru.kvizcap.quiz.app.ui.components.money
 import ru.kvizcap.quiz.app.R
@@ -97,7 +97,7 @@ fun ProgressScreen(state: AppState, dispatch: (Intent) -> Unit) {
                     drawPath(line, c.pri, style = Stroke(3.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
                     if (visible == pts.size) drawCircle(c.pri, dot, pts.last())
                 }
-                val fmtDate = DateTimeFormatter.ofPattern("d MMM", Locale.getDefault())
+                val fmtDate = DateTimeFormatter.ofPattern("d MMM", LocalLocale.current.platformLocale)
                 Row {
                     Text(Economy.dateOf(history.first().key).format(fmtDate), style = Type.tiny, color = c.ink2, modifier = Modifier.weight(1f))
                     Text(Economy.dateOf(history.last().key).format(fmtDate), style = Type.tiny, color = c.ink2)

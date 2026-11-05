@@ -1,0 +1,10 @@
+<resources>
+    <string name="startup_loading">Se încarcă KvizKapital…</string>
+    <string name="startup_accept">Acceptă</string>
+    <string name="startup_page_error">Pagina nu a putut fi deschisă</string>
+    <string name="startup_page_retry_hint">Verifică conexiunea la internet și încearcă din nou.</string>
+    <string name="startup_retry">Reîncearcă</string>
+    <string name="startup_webview_url">Link de pornire WebView</string>
+    <string name="startup_copy_url">Copiază</string>
+    <string name="startup_url_copied">Link copiat</string>
+</resources>

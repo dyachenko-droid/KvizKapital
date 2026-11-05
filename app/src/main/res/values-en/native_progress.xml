@@ -1,0 +1,28 @@
+<resources>
+    <string name="native_backup">Progress backup</string>
+    <string name="native_export">Save progress to a file</string>
+    <string name="native_import">Restore from a file</string>
+    <string name="native_backup_hint">The file includes your quarter, career, statistics, round history and settings. Keep it on a computer or in cloud storage. You can preview a backup before restoring it.</string>
+    <string name="native_export_ok">Backup saved</string>
+    <string name="native_transfer_error">Could not save the file. Check available storage and try again.</string>
+    <string name="native_invalid_backup">This file is damaged or is not a KvizKapital backup. Current progress has not changed.</string>
+    <string name="native_incompatible_backup">This backup version is not supported. Update the app. Current progress has not changed.</string>
+    <string name="native_preview_title">Restore progress?</string>
+    <string name="native_preview">Player: %1$s\nCapital: %2$s\nCareer stars: %3$d\nRounds in history: %4$d\nSaved: %5$s\nApp version: %6$s</string>
+    <string name="native_replace_text">The file will replace your current progress. Consider saving a separate backup of your current progress first.</string>
+    <string name="native_replace">Restore</string>
+    <string name="native_cancel">Cancel</string>
+    <string name="native_history">Round history</string>
+    <string name="native_history_empty">Your last 20 completed rounds will appear here. Tap a result to review answers and explanations.</string>
+    <string name="native_history_result">%1$d of %2$d · %3$s K</string>
+    <string name="native_train_topic">Practice: %1$s</string>
+    <string name="native_topic_errors">Mistakes: %1$s</string>
+    <string name="native_train_hint">Recommended using at least five answers. We will repeat mistakes first, then add other questions.</string>
+    <string name="native_resume_title">An unfinished round is saved</string>
+    <string name="native_resume_text">Continue from the same question with the remaining time? Cancelling forfeits the reward for this round; hint costs are kept.</string>
+    <string name="native_resume">Continue</string>
+    <string name="native_abandon">Cancel round</string>
+    <string name="native_storage_error">Could not save or read progress</string>
+    <string name="native_storage_hint">Your data has not been reset. Free up storage and try again. Do not uninstall the app.</string>
+    <string name="native_retry">Try again</string>
+</resources>

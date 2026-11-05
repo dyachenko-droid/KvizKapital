@@ -43,6 +43,15 @@ object Lang {
         else -> language
     }.takeIf { tag -> all.any { it.tag == tag } } ?: FALLBACK
 
+    fun restoreSelection(context: Context, tag: String) {
+        if (Build.VERSION.SDK_INT >= 33) {
+            context.getSystemService(LocaleManager::class.java).applicationLocales =
+                if (tag.isEmpty()) LocaleList.getEmptyLocaleList() else LocaleList.forLanguageTags(tag)
+        } else {
+            check(prefs(context).edit().putString(KEY, tag).commit())
+        }
+    }
+
     fun apply(activity: Activity, tag: String) {
         if (Build.VERSION.SDK_INT >= 33) {
             activity.getSystemService(LocaleManager::class.java).applicationLocales =

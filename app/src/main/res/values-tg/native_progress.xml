@@ -1,0 +1,28 @@
+<resources>
+    <string name="native_backup">Нусхаи эҳтиётии пешрафт</string>
+    <string name="native_export">Нигоҳ доштани пешрафт дар файл</string>
+    <string name="native_import">Барқарор кардан аз файл</string>
+    <string name="native_backup_hint">Нусха маҳалла, марҳилаҳои касб, омор, таърихи даврҳо ва танзимотро дар бар мегирад. Файлро дар компютер ё абр нигоҳ доред. Пеш аз барқароркунӣ мундариҷаро санҷидан мумкин аст.</string>
+    <string name="native_export_ok">Нусхаи эҳтиётӣ нигоҳ дошта шуд</string>
+    <string name="native_transfer_error">Файл нигоҳ дошта нашуд. Ҷои холиро санҷида, боз кӯшиш кунед.</string>
+    <string name="native_invalid_backup">Файл вайрон аст ё нусхаи КвизКапитал нест. Пешрафти ҷорӣ тағйир наёфт.</string>
+    <string name="native_incompatible_backup">Ин версияи нусха дастгирӣ намешавад. Барномаро нав кунед. Пешрафти ҷорӣ тағйир наёфт.</string>
+    <string name="native_preview_title">Пешрафт барқарор шавад?</string>
+    <string name="native_preview">Бозигар: %1$s\nСармоя: %2$s\nСитораҳои касб: %3$d\nДаврҳо дар таърих: %4$d\nСанаи нусха: %5$s\nВерсияи барнома: %6$s</string>
+    <string name="native_replace_text">Пешрафти ҷорӣ бо маълумоти файл иваз мешавад. Аввал нигоҳ доштани нусхаи алоҳидаи пешрафти ҷорӣ тавсия мешавад.</string>
+    <string name="native_replace">Барқарор кардан</string>
+    <string name="native_cancel">Бекор кардан</string>
+    <string name="native_history">Таърихи даврҳо</string>
+    <string name="native_history_empty">Дар ин ҷо 20 даври охирини анҷомёфта нишон дода мешавад. Барои дидани ҷавобҳо ва шарҳҳо натиҷаро пахш кунед.</string>
+    <string name="native_history_result">%1$d аз %2$d · %3$s К</string>
+    <string name="native_train_topic">Машқ: %1$s</string>
+    <string name="native_topic_errors">Хатоҳо: %1$s</string>
+    <string name="native_train_hint">Тавсия аз рӯи ҳадди ақал панҷ ҷавоб дода мешавад. Аввал хатоҳо ва сипас саволҳои дигарро такрор мекунем.</string>
+    <string name="native_resume_title">Даври нотамом ҳаст</string>
+    <string name="native_resume_text">Аз ҳамон савол бо вақти боқимонда идома медиҳед? Ҳангоми бекоркунӣ мукофот дода намешавад, хароҷоти ёрӣ нигоҳ дошта мешавад.</string>
+    <string name="native_resume">Идома додан</string>
+    <string name="native_abandon">Бекор кардани давр</string>
+    <string name="native_storage_error">Пешрафт нигоҳ дошта ё хонда нашуд</string>
+    <string name="native_storage_hint">Маълумот тоза нашудааст. Дар дастгоҳ ҷой холӣ карда, боз кӯшиш кунед. Барномаро нест накунед.</string>
+    <string name="native_retry">Такрор кардан</string>
+</resources>

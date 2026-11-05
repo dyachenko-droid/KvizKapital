@@ -1,0 +1,28 @@
+<resources>
+    <string name="native_backup">Copie de siguranță a progresului</string>
+    <string name="native_export">Salvează progresul într-un fișier</string>
+    <string name="native_import">Restaurează din fișier</string>
+    <string name="native_backup_hint">Copia include cartierul, cariera, statisticile, istoricul rundelor și setările. Păstrați fișierul pe computer sau în cloud. Puteți verifica conținutul înainte de restaurare.</string>
+    <string name="native_export_ok">Copia de siguranță a fost salvată</string>
+    <string name="native_transfer_error">Fișierul nu a putut fi salvat. Verificați spațiul liber și încercați din nou.</string>
+    <string name="native_invalid_backup">Fișierul este deteriorat sau nu este o copie KvizKapital. Progresul curent nu a fost modificat.</string>
+    <string name="native_incompatible_backup">Această versiune a copiei nu este acceptată. Actualizați aplicația. Progresul curent nu a fost modificat.</string>
+    <string name="native_preview_title">Restaurați progresul?</string>
+    <string name="native_preview">Jucător: %1$s\nCapital: %2$s\nStele în carieră: %3$d\nRunde în istoric: %4$d\nSalvat: %5$s\nVersiunea aplicației: %6$s</string>
+    <string name="native_replace_text">Progresul curent va fi înlocuit cu datele din fișier. Vă recomandăm să salvați mai întâi o copie separată a progresului curent.</string>
+    <string name="native_replace">Restaurează</string>
+    <string name="native_cancel">Anulează</string>
+    <string name="native_history">Istoricul rundelor</string>
+    <string name="native_history_empty">Aici vor apărea ultimele 20 de runde încheiate. Atingeți un rezultat pentru a vedea răspunsurile și explicațiile.</string>
+    <string name="native_history_result">%1$d din %2$d · %3$s K</string>
+    <string name="native_train_topic">Exersează: %1$s</string>
+    <string name="native_topic_errors">Greșeli: %1$s</string>
+    <string name="native_train_hint">Recomandare bazată pe cel puțin cinci răspunsuri. Repetăm mai întâi greșelile, apoi adăugăm alte întrebări.</string>
+    <string name="native_resume_title">Există o rundă neterminată</string>
+    <string name="native_resume_text">Continuați de la aceeași întrebare cu timpul rămas? Anularea pierde recompensa rundei; costul indiciilor rămâne.</string>
+    <string name="native_resume">Continuă</string>
+    <string name="native_abandon">Anulează runda</string>
+    <string name="native_storage_error">Progresul nu a putut fi salvat sau citit</string>
+    <string name="native_storage_hint">Datele nu au fost resetate. Eliberați spațiu pe dispozitiv și încercați din nou. Nu dezinstalați aplicația.</string>
+    <string name="native_retry">Încearcă din nou</string>
+</resources>

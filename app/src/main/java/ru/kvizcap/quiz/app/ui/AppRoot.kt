@@ -93,12 +93,14 @@ private fun depth(s: Screen): Int = when (s) {
     Screen.Career, Screen.Settings, is Screen.Topic -> 2
     Screen.Round, Screen.Blitz -> 3
     Screen.Result, Screen.BlitzResult -> 4
-    Screen.Review -> 5
+    Screen.Review, Screen.HistoryReview -> 5
+    Screen.History, Screen.Backup -> 2
 }
 
 @Composable
 fun AppRoot(state: AppState, dispatch: (Intent) -> Unit, onExit: () -> Unit) {
     val c = App.c
+    if (state.storageError) { ru.kvizcap.quiz.app.ui.screens.NativeStorageError(); return }
     if (!state.loaded) {
         Splash()
         return
@@ -130,7 +132,9 @@ fun AppRoot(state: AppState, dispatch: (Intent) -> Unit, onExit: () -> Unit) {
                 Screen.Settings -> SettingsScreen(state, dispatch)
                 Screen.Round -> RoundScreen(state, dispatch)
                 Screen.Result -> ResultScreen(state, dispatch)
-                Screen.Review -> ReviewScreen(state, dispatch)
+                Screen.Review, Screen.HistoryReview -> ReviewScreen(state, dispatch)
+                Screen.History -> ru.kvizcap.quiz.app.ui.screens.HistoryScreen(state, dispatch)
+                Screen.Backup -> ru.kvizcap.quiz.app.ui.screens.ProgressBackupScreen(state)
                 Screen.Blitz -> BlitzScreen(state, dispatch)
                 Screen.BlitzResult -> BlitzResultScreen(state, dispatch)
                 is Screen.Topic -> TopicScreen(state, screen.topic, dispatch)
@@ -148,6 +152,7 @@ fun AppRoot(state: AppState, dispatch: (Intent) -> Unit, onExit: () -> Unit) {
         CoinBurst(state.collectFx) { dispatch(Intent.DismissCollect) }
         UpgradeOverlay(state.upgradeFx, dispatch)
         ToastHost(state.toasts, dispatch)
+        ru.kvizcap.quiz.app.ui.screens.ResumeSessionDialog(state, dispatch)
         ConfirmDialog(
             visible = state.confirmExit,
             title = stringResource(R.string.exit_title),

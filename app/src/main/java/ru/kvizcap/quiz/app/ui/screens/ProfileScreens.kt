@@ -194,6 +194,8 @@ fun SettingsScreen(state: AppState, dispatch: (Intent) -> Unit) {
                 }
             }
             Group(stringResource(R.string.data)) {
+                Text(stringResource(R.string.native_backup), style = Type.label, color = c.pri,
+                    modifier = Modifier.fillMaxWidth().pressable { dispatch(Intent.Open(Screen.Backup)) }.padding(16.dp))
                 Row(Modifier.fillMaxWidth().pressable { dispatch(Intent.ConfirmReset(true)) }.padding(horizontal = 14.dp, vertical = 14.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                     Box(Modifier.size(36.dp).background(c.coralSoft, RoundedCornerShape(12.dp)), contentAlignment = Alignment.Center) { Glyph(Glyphs.REDO, c.coralInk, 20.dp) }
                     Column {
@@ -202,7 +204,7 @@ fun SettingsScreen(state: AppState, dispatch: (Intent) -> Unit) {
                     }
                 }
             }
-            Text(stringResource(R.string.footer), style = Type.tiny, color = c.ink2, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth().padding(top = 8.dp))
+            Text(stringResource(R.string.footer, ru.kvizcap.quiz.app.BuildConfig.VERSION_NAME), style = Type.tiny, color = c.ink2, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth().padding(top = 8.dp))
             Spacer(Modifier.height(20.dp))
         }
     }

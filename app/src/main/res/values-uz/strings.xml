@@ -222,7 +222,7 @@
     <string name="data">Maʼlumotlar</string>
     <string name="reset">Natijalarni oʻchirish</string>
     <string name="reset_sub">Kapital, mahalla va yutuqlar</string>
-    <string name="footer">KvizKapital 1.0 · oʻyindagi kapital virtual: uni sotib olib yoki yechib boʻlmaydi</string>
+    <string name="footer">KvizKapital %1$s · oʻyindagi kapital virtual: uni sotib olib yoki yechib boʻlmaydi</string>
 
     <string name="seconds_short">%1$d s</string>
     <string name="why">Nega shunday?</string>

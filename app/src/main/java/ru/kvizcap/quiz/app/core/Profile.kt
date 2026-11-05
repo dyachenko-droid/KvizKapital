@@ -14,7 +14,7 @@ data class CellState(
 
 @Serializable
 data class TopicStat(val answered: Int = 0, val correct: Int = 0) {
-    val accuracy: Int get() = if (answered == 0) 0 else correct * 100 / answered
+    val accuracy: Int get() = if (answered == 0) 0 else (correct.toLong() * 100 / answered).toInt()
 }
 
 @Serializable
@@ -28,7 +28,7 @@ data class Stats(
     val marathonBest: Int = 0,
     val perTopic: Map<String, TopicStat> = emptyMap(),
 ) {
-    val accuracy: Int get() = if (answered == 0) 0 else correct * 100 / answered
+    val accuracy: Int get() = if (answered == 0) 0 else (correct.toLong() * 100 / answered).toInt()
 }
 
 @Serializable
@@ -60,6 +60,7 @@ data class Profile(
     val settings: Settings = Settings(),
     val assetsHistory: Map<Long, Long> = emptyMap(),
     val rankSeen: Int = 0,
+    val history: List<ru.kvizcap.quiz.app.mvi.RoundHistory> = emptyList(),
 ) {
     val chaptersDone: Int get() = career.count { it[Career.LEVELS - 1] >= 1 }
     val totalStars: Int get() = career.sumOf { ch -> ch.sumOf { it.coerceAtLeast(0) } }

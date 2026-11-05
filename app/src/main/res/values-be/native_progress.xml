@@ -1,0 +1,28 @@
+<resources>
+    <string name="native_backup">Рэзервовая копія прагрэсу</string>
+    <string name="native_export">Захаваць прагрэс у файл</string>
+    <string name="native_import">Аднавіць з файла</string>
+    <string name="native_backup_hint">Копія ўключае квартал, кар’еру, статыстыку, гісторыю раўндаў і налады. Захавайце файл на камп’ютар або ў воблака. Перад аднаўленнем можна праверыць змест.</string>
+    <string name="native_export_ok">Рэзервовая копія захавана</string>
+    <string name="native_transfer_error">Не ўдалося захаваць файл. Праверце вольнае месца і паспрабуйце яшчэ раз.</string>
+    <string name="native_invalid_backup">Файл пашкоджаны або не з’яўляецца копіяй КвізКапітал. Бягучы прагрэс не зменены.</string>
+    <string name="native_incompatible_backup">Гэтая версія копіі не падтрымліваецца. Абнавіце праграму. Бягучы прагрэс не зменены.</string>
+    <string name="native_preview_title">Аднавіць прагрэс?</string>
+    <string name="native_preview">Гулец: %1$s\nКапітал: %2$s\nЗоркі кар’еры: %3$d\nРаўндаў у гісторыі: %4$d\nКопія ад: %5$s\nВерсія праграмы: %6$s</string>
+    <string name="native_replace_text">Бягучы прагрэс будзе заменены данымі з файла. Спачатку рэкамендуем захаваць асобную копію бягучага прагрэсу.</string>
+    <string name="native_replace">Аднавіць</string>
+    <string name="native_cancel">Адмена</string>
+    <string name="native_history">Гісторыя раўндаў</string>
+    <string name="native_history_empty">Тут з’явяцца апошнія 20 завершаных раўндаў. Націсніце на вынік, каб паглядзець адказы і тлумачэнні.</string>
+    <string name="native_history_result">%1$d з %2$d · %3$s К</string>
+    <string name="native_train_topic">Патрэніраваць: %1$s</string>
+    <string name="native_topic_errors">Памылкі: %1$s</string>
+    <string name="native_train_hint">Рэкамендацыя паводле не менш як пяці адказаў. Спачатку паўторым памылкі, потым дадамо іншыя пытанні.</string>
+    <string name="native_resume_title">Ёсць незавершаны раўнд</string>
+    <string name="native_resume_text">Працягнуць з таго ж пытання і з астатнім часам? Пры адмене ўзнагарода не налічыцца, выдаткі на падказкі застануцца.</string>
+    <string name="native_resume">Працягнуць</string>
+    <string name="native_abandon">Скасаваць раўнд</string>
+    <string name="native_storage_error">Не ўдалося захаваць або прачытаць прагрэс</string>
+    <string name="native_storage_hint">Даныя не скінуты. Вызваліце месца на прыладзе і паўтарыце спробу. Не выдаляйце праграму.</string>
+    <string name="native_retry">Паўтарыць</string>
+</resources>

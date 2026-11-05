@@ -5,5 +5,3 @@
 -keepclasseswithmembers class ru.kvizcap.quiz.app.** {
     kotlinx.serialization.KSerializer serializer(...);
 }
-
--keep public class com.android.installreferrer.** { *; }

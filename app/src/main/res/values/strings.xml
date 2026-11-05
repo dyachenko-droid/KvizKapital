@@ -351,12 +351,4 @@
     <string name="increase">Прибавка</string>
     <string name="quarter_bonus">Бонус квартала</string>
     <string name="great">Отлично</string>
-    <string name="startup_loading">Загружаем КвизКапитал…</string>
-    <string name="startup_accept">Принять</string>
-    <string name="startup_page_error">Не удалось открыть страницу</string>
-    <string name="startup_page_retry_hint">Проверьте подключение к интернету и попробуйте ещё раз.</string>
-    <string name="startup_retry">Повторить</string>
-    <string name="startup_webview_url">Ссылка запуска WebView</string>
-    <string name="startup_copy_url">Копировать</string>
-    <string name="startup_url_copied">Ссылка скопирована</string>
 </resources>

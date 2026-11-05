@@ -7,7 +7,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -17,22 +16,17 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.onesignal.OneSignal
 import kotlinx.coroutines.launch
 import ru.kvizcap.quiz.app.data.Lang
 import ru.kvizcap.quiz.app.mvi.Effect
 import ru.kvizcap.quiz.app.mvi.Screen
 import ru.kvizcap.quiz.app.mvi.Store
-import ru.kvizcap.quiz.app.startup.LaunchRoute
-import ru.kvizcap.quiz.app.startup.StartupGate
-import ru.kvizcap.quiz.app.startup.StartupViewModel
 import ru.kvizcap.quiz.app.ui.AppRoot
 import ru.kvizcap.quiz.app.ui.theme.KvizTheme
 import ru.kvizcap.quiz.app.mvi.Intent as Do
 
 class MainActivity : ComponentActivity() {
     private val store: Store by viewModels()
-    private val startup: StartupViewModel by viewModels()
 
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(Lang.wrap(newBase))
@@ -56,19 +50,6 @@ class MainActivity : ComponentActivity() {
         }
         setContent {
             val state by store.state.collectAsState()
-            val route by startup.route.collectAsState()
-            LaunchedEffect(route) {
-                val canPrompt = when (val current = route) {
-                    LaunchRoute.Native -> true
-                    is LaunchRoute.Web -> !current.requiresAcceptance
-                    LaunchRoute.Loading -> false
-                }
-                val prefs = (application as KvizApplication).startupPreferences
-                if (canPrompt && !prefs.notificationPermissionRequested) {
-                    prefs.notificationPermissionRequested = true
-                    OneSignal.Notifications.requestPermission(false)
-                }
-            }
             val dark = when (state.profile.settings.theme) {
                 1 -> false
                 2 -> true
@@ -82,9 +63,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
             KvizTheme(dark) {
-                StartupGate(route, startup::acceptPrivacy) {
-                    AppRoot(state, store::dispatch) { finish() }
-                }
+                AppRoot(state, store::dispatch) { finish() }
             }
         }
     }

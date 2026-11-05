@@ -80,3 +80,6 @@ JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home' ./gradle
 Запускаются вместе тесты удалённого старта и тесты прогресса, сохранённые при переносе.
 Для подписанного релиза используется прежний GitHub Actions workflow `release.yml`
 с выбранной веткой `codex/webview`; релизные ключи в исходники не добавляются.
+
+При переносе прошли все 88 JVM-тестов, `assembleDebug` и `lintDebug` без ошибок.
+В проверенном манифесте — версия 1.2.0 (3) и сохранённое разрешение INTERNET.

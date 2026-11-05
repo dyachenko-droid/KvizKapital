@@ -116,7 +116,7 @@ fun HomeScreen(state: AppState, dispatch: (Intent) -> Unit) {
                 }
                 if (p.mistakes.isNotEmpty()) {
                     Row(
-                        Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(c.surface).pressable { dispatch(Intent.StartErrors) }.padding(14.dp),
+                        Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(c.surface).pressable { dispatch(Intent.StartErrors()) }.padding(14.dp),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(12.dp),
                     ) {
@@ -129,6 +129,7 @@ fun HomeScreen(state: AppState, dispatch: (Intent) -> Unit) {
                     }
                 }
                 Insight(state)
+                TrainingSuggestion(state, dispatch)
             }
         }
     }

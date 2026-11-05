@@ -35,6 +35,8 @@ fun modeTitle(mode: RoundMode): String = when (mode) {
     is RoundMode.TopicPlay -> stringResource(mode.topic.title)
     RoundMode.Quick -> stringResource(R.string.mode_quick)
     RoundMode.Marathon -> stringResource(R.string.mode_marathon)
-    RoundMode.Errors -> stringResource(R.string.mode_errors)
+    is RoundMode.Training -> stringResource(R.string.native_train_topic, stringResource(mode.topic.title))
+    is RoundMode.Errors -> mode.topic?.let { stringResource(R.string.native_topic_errors, stringResource(it.title)) } ?: stringResource(R.string.mode_errors)
+    RoundMode.Blitz -> stringResource(R.string.mode_blitz)
     RoundMode.Daily -> stringResource(R.string.mode_daily)
 }

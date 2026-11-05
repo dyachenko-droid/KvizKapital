@@ -1,0 +1,28 @@
+<resources>
+    <string name="native_backup">Առաջընթացի պահուստային պատճեն</string>
+    <string name="native_export">Առաջընթացը պահել ֆայլում</string>
+    <string name="native_import">Վերականգնել ֆայլից</string>
+    <string name="native_backup_hint">Պատճենը ներառում է թաղամասը, կարիերան, վիճակագրությունը, փուլերի պատմությունը և կարգավորումները։ Ֆայլը պահեք համակարգչում կամ ամպում։ Մինչև վերականգնումը կարող եք ստուգել բովանդակությունը։</string>
+    <string name="native_export_ok">Պահուստային պատճենը պահպանված է</string>
+    <string name="native_transfer_error">Չհաջողվեց պահել ֆայլը։ Ստուգեք ազատ տարածքը և կրկին փորձեք։</string>
+    <string name="native_invalid_backup">Ֆայլը վնասված է կամ ԿվիզԿապիտալի պատճեն չէ։ Ընթացիկ առաջընթացը չի փոխվել։</string>
+    <string name="native_incompatible_backup">Պատճենի այս տարբերակը չի աջակցվում։ Թարմացրեք հավելվածը։ Ընթացիկ առաջընթացը չի փոխվել։</string>
+    <string name="native_preview_title">Վերականգնե՞լ առաջընթացը։</string>
+    <string name="native_preview">Խաղացող՝ %1$s\nԿապիտալ՝ %2$s\nԿարիերայի աստղեր՝ %3$d\nՓուլեր պատմության մեջ՝ %4$d\nՊահված է՝ %5$s\nՀավելվածի տարբերակ՝ %6$s</string>
+    <string name="native_replace_text">Ընթացիկ առաջընթացը կփոխարինվի ֆայլի տվյալներով։ Խորհուրդ ենք տալիս նախ առանձին պատճեն պահել ընթացիկ առաջընթացից։</string>
+    <string name="native_replace">Վերականգնել</string>
+    <string name="native_cancel">Չեղարկել</string>
+    <string name="native_history">Փուլերի պատմություն</string>
+    <string name="native_history_empty">Այստեղ կհայտնվեն վերջին 20 ավարտված փուլերը։ Սեղմեք արդյունքի վրա՝ պատասխաններն ու բացատրությունները դիտելու համար։</string>
+    <string name="native_history_result">%1$d՝ %2$d-ից · %3$s Կ</string>
+    <string name="native_train_topic">Մարզվել՝ %1$s</string>
+    <string name="native_topic_errors">Սխալներ՝ %1$s</string>
+    <string name="native_train_hint">Առաջարկը հիմնված է առնվազն հինգ պատասխանի վրա։ Սկզբում կկրկնենք սխալները, հետո կավելացնենք այլ հարցեր։</string>
+    <string name="native_resume_title">Կա չավարտված փուլ</string>
+    <string name="native_resume_text">Շարունակե՞լ նույն հարցից մնացած ժամանակով։ Չեղարկելու դեպքում փուլի պարգևը չի տրվի, օգնության ծախսերը կպահպանվեն։</string>
+    <string name="native_resume">Շարունակել</string>
+    <string name="native_abandon">Չեղարկել փուլը</string>
+    <string name="native_storage_error">Չհաջողվեց պահել կամ կարդալ առաջընթացը</string>
+    <string name="native_storage_hint">Տվյալները չեն զրոյացվել։ Ազատեք տարածք սարքում և կրկին փորձեք։ Մի ջնջեք հավելվածը։</string>
+    <string name="native_retry">Կրկին փորձել</string>
+</resources>

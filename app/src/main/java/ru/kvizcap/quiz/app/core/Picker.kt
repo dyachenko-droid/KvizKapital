@@ -46,8 +46,13 @@ class Picker(private val content: Content) {
         }.map { shuffled(it, rnd) }
     }
 
-    fun byIds(ids: List<String>, rnd: Random): List<RoundQuestion> =
-        ids.mapNotNull { content.question(it) }.shuffled(rnd).take(10).map { shuffled(it, rnd) }
+    fun byIds(ids: List<String>, rnd: Random, topic: TopicId? = null): List<RoundQuestion> =
+        ids.distinct().mapNotNull { content.question(it) }.filter { topic == null || it.topic == topic }.shuffled(rnd).take(10).map { shuffled(it, rnd) }
+
+    fun training(topic: TopicId, preferred: Difficulty, seen: Map<String, Int>, mistakes: List<String>, rnd: Random): List<RoundQuestion> {
+        val errors = byIds(mistakes, rnd, topic)
+        return errors + pick(listOf(topic), preferred, 10 - errors.size, seen, rnd, errors.map { it.question.id }.toSet())
+    }
 
     fun daily(day: Long): RoundQuestion {
         val rnd = Random(day * 7919 + 17)

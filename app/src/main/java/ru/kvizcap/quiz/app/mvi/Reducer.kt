@@ -52,7 +52,14 @@ class Reducer(content: Content) {
             is Intent.Tab -> { fx.buzz(Buzz.LIGHT); s.copy(stack = listOf(intent.screen), sheet = null) }
             Intent.Back -> back(s, fx)
             Intent.Tick -> tick(s, now, fx)
-            Intent.Foreground -> s
+            Intent.Foreground -> s.copy(blitz = s.blitz?.let { if (it.paused) it.copy(paused = false, endsAt = now + it.remainingOnPause) else it })
+            Intent.Background -> pause(s, true, now).let { paused -> paused.copy(blitz = paused.blitz?.let { if (it.paused) it else it.copy(paused = true, remainingOnPause = (it.endsAt - now).coerceAtLeast(0)) }) }
+            is Intent.OfferResume -> s.copy(pendingSession = intent.session)
+            is Intent.ResumeSaved -> s.copy(pendingSession = null, round = intent.round, blitz = intent.blitz, stack = listOf(Screen.Home, if (intent.round != null) Screen.Round else Screen.Blitz))
+            Intent.ResumePending, Intent.RetryStorage -> s
+            Intent.AbandonSaved -> s.copy(pendingSession = null, profile = s.profile.copy(capital = (s.profile.capital - (s.pendingSession?.round?.hintsSpent ?: 0)).coerceAtLeast(0)))
+            is Intent.OpenHistory -> s.profile.history.firstOrNull { it.id == intent.id }?.let { s.copy(historyReview = it, stack = s.stack + Screen.HistoryReview) } ?: s
+            is Intent.ImportProgress -> return Next(AppState(loaded = true, profile = intent.profile, pendingSession = intent.session, language = intent.language, stack = listOf(if (intent.profile.onboarded) Screen.Home else Screen.Onboarding), now = now), emptyList())
             is Intent.FinishOnboarding -> {
                 fx.sound(Sfx.FINISH)
                 s.copy(
@@ -69,10 +76,13 @@ class Reducer(content: Content) {
             Intent.ContinueCareer -> s.profile.currentLevel().let { (c, l) -> startCareer(s, c, l, now, rnd, fx) }
             is Intent.SetTopicDifficulty -> s.copy(topicDifficulty = intent.difficulty)
             is Intent.StartTopic -> startRound(s, RoundMode.TopicPlay(intent.topic, intent.difficulty), picker.pick(listOf(intent.topic), intent.difficulty, 10, s.profile.seen, rnd), now, fx)
+            is Intent.StartTraining -> {
+                val difficulty = Difficulty.entries[s.profile.settings.defaultDifficulty]
+                startRound(s, RoundMode.Training(intent.topic, difficulty), picker.training(intent.topic, difficulty, s.profile.seen, s.profile.mistakes, rnd), now, fx)
+            }
             Intent.StartQuick -> startRound(s, RoundMode.Quick, picker.pick(openTopics(s.profile), Difficulty.entries[s.profile.settings.defaultDifficulty], 10, s.profile.seen, rnd), now, fx)
             Intent.StartMarathon -> startRound(s, RoundMode.Marathon, picker.marathon(TopicId.entries, s.profile.seen, rnd), now, fx)
-            Intent.StartErrors -> if (s.profile.mistakes.isEmpty()) toast(s, R.string.toast_no_mistakes, now)
-                else startRound(s, RoundMode.Errors, picker.byIds(s.profile.mistakes, rnd), now, fx)
+            is Intent.StartErrors -> startErrors(s, RoundMode.Errors(intent.topic), now, rnd, fx)
             Intent.StartDaily -> {
                 val today = Economy.today(now)
                 if (s.profile.dailyLastDay == today) toast(s, R.string.toast_daily_done, now)
@@ -90,7 +100,7 @@ class Reducer(content: Content) {
             is Intent.Explain -> s.round?.let { s.copy(round = it.copy(explain = intent.open)) } ?: s
             is Intent.Pause -> pause(s, intent.paused, now)
             Intent.Restart -> s.round?.let { r -> restart(s.copy(round = null, stack = s.stack.filterNot { it == Screen.Round }), r.mode, now, rnd, fx) } ?: s
-            Intent.QuitRound -> s.copy(round = null, stack = s.stack.filterNot { it == Screen.Round }.ifEmpty { listOf(Screen.Home) })
+            Intent.QuitRound -> s.copy(profile = s.profile.copy(capital = (s.profile.capital - (s.round?.hintsSpent ?: 0)).coerceAtLeast(0)), round = null, stack = s.stack.filterNot { it == Screen.Round }.ifEmpty { listOf(Screen.Home) })
             Intent.Replay -> s.result?.let { res -> restart(s.copy(stack = s.stack.filterNot { it == Screen.Result || it == Screen.Review }), res.mode, now, rnd, fx) } ?: s
             is Intent.BlitzAnswer -> blitzAnswer(s, intent.value, now, fx)
             Intent.QuitBlitz -> finishBlitz(s, fx)
@@ -120,7 +130,7 @@ class Reducer(content: Content) {
             is Intent.SetAvatar -> s.copy(profile = s.profile.copy(avatar = intent.index))
             is Intent.SetName -> s.copy(profile = s.profile.copy(name = intent.name.take(24)))
         }
-        val processed = postProcess(prev, next, now, fx)
+        val processed = if (intent is Intent.Loaded) next else postProcess(prev, next, now, fx)
         if (processed.profile != prev.profile) fx += Effect.Save
         return Next(processed, fx.list)
     }
@@ -161,11 +171,17 @@ class Reducer(content: Content) {
     private fun restart(s: AppState, mode: RoundMode, now: Long, rnd: Random, fx: Fx): AppState = when (mode) {
         is RoundMode.CareerLevel -> startCareer(s, mode.chapter, mode.level, now, rnd, fx)
         is RoundMode.TopicPlay -> startRound(s, mode, picker.pick(listOf(mode.topic), mode.difficulty, 10, s.profile.seen, rnd), now, fx)
+        is RoundMode.Training -> startRound(s, mode, picker.training(mode.topic, mode.difficulty, s.profile.seen, s.profile.mistakes, rnd), now, fx)
         RoundMode.Quick -> startRound(s, mode, picker.pick(openTopics(s.profile), Difficulty.entries[s.profile.settings.defaultDifficulty], 10, s.profile.seen, rnd), now, fx)
         RoundMode.Marathon -> startRound(s, mode, picker.marathon(TopicId.entries, s.profile.seen, rnd), now, fx)
-        RoundMode.Errors -> if (s.profile.mistakes.isEmpty()) toast(s.copy(stack = s.stack.ifEmpty { listOf(Screen.Home) }), R.string.toast_no_mistakes, now)
-            else startRound(s, mode, picker.byIds(s.profile.mistakes, rnd), now, fx)
+        is RoundMode.Errors -> startErrors(s, mode, now, rnd, fx)
+        RoundMode.Blitz -> s
         RoundMode.Daily -> s.copy(stack = s.stack.ifEmpty { listOf(Screen.Home) })
+    }
+
+    private fun startErrors(s: AppState, mode: RoundMode.Errors, now: Long, rnd: Random, fx: Fx): AppState {
+        val questions = picker.byIds(s.profile.mistakes, rnd, mode.topic)
+        return if (questions.isEmpty()) toast(s, R.string.toast_no_mistakes, now) else startRound(s, mode, questions, now, fx)
     }
 
     private fun startRound(s: AppState, mode: RoundMode, questions: List<RoundQuestion>, now: Long, fx: Fx): AppState {
@@ -187,7 +203,7 @@ class Reducer(content: Content) {
     private fun pause(s: AppState, paused: Boolean, now: Long): AppState {
         val r = s.round ?: return s
         if (r.paused == paused) return s
-        return if (paused) s.copy(round = r.copy(paused = true, remainingOnPause = (r.deadline - now).coerceAtLeast(1_000)))
+        return if (paused) s.copy(round = r.copy(paused = true, remainingOnPause = (r.deadline - now).coerceIn(0, QUESTION_MS)))
         else s.copy(round = r.copy(paused = false, deadline = now + r.remainingOnPause))
     }
 
@@ -235,7 +251,7 @@ class Reducer(content: Content) {
                 perTopic = p.stats.perTopic + (topicKey to ts.copy(answered = ts.answered + 1, correct = ts.correct + if (correct) 1 else 0)),
             ),
             mistakes = when {
-                correct && r.mode == RoundMode.Errors -> p.mistakes - rq.question.id
+                correct && (r.mode is RoundMode.Errors || r.mode is RoundMode.Training) -> p.mistakes - rq.question.id
                 !correct && rq.question.id !in p.mistakes -> (p.mistakes + rq.question.id).takeLast(60)
                 else -> p.mistakes
             },
@@ -360,7 +376,7 @@ class Reducer(content: Content) {
                 }
             }
             is RoundMode.TopicPlay -> passed = starCount >= 1
-            RoundMode.Quick, RoundMode.Marathon, RoundMode.Errors -> passed = true
+            RoundMode.Quick, RoundMode.Marathon, RoundMode.Blitz, is RoundMode.Errors, is RoundMode.Training -> passed = true
             RoundMode.Daily -> passed = correct > 0
         }
         if (r.mode == RoundMode.Marathon) p = p.copy(stats = p.stats.copy(marathonBest = max(p.stats.marathonBest, correct)))
@@ -372,7 +388,7 @@ class Reducer(content: Content) {
             stars = starCount, passed = passed, bestStreak = r.bestStreak, records = r.records,
             chapterCompleted = chapterDone, usedAnyHint = r.usedAnyHint,
         )
-        return s.copy(profile = p, round = null, result = result, stack = s.stack.filterNot { it == Screen.Round } + Screen.Result)
+        return s.copy(profile = p.copy(history = (listOf(RoundHistory(java.util.UUID.randomUUID().toString(), now, result)) + p.history).take(20)), round = null, result = result, stack = s.stack.filterNot { it == Screen.Round } + Screen.Result)
     }
 
     private fun blitzAnswer(s: AppState, value: Boolean, now: Long, fx: Fx): AppState {
@@ -384,6 +400,8 @@ class Reducer(content: Content) {
         if (correct) { fx.sound(Sfx.CORRECT); fx.buzz(Buzz.LIGHT) } else { fx.sound(Sfx.WRONG); fx.buzz(Buzz.REJECT) }
         return s.copy(
             blitz = b.copy(
+                records = b.records + AnswerRecord(b.current.id.toString(), b.current.text, null, "", correct, false, gain, b.current.explanation, value, b.current.isTrue),
+                bestStreak = max(b.bestStreak, streak),
                 index = b.index + 1, streak = streak, correct = b.correct + if (correct) 1 else 0, answered = b.answered + 1,
                 delta = b.delta + gain, lastCorrect = correct, serial = b.serial + 1, history = (b.history + correct).takeLast(11),
             ),
@@ -399,9 +417,11 @@ class Reducer(content: Content) {
             stats = s.profile.stats.copy(blitzBest = max(s.profile.stats.blitzBest, b.correct), earned = s.profile.stats.earned + b.delta),
         )
         fx.sound(Sfx.FINISH); fx.buzz(Buzz.HEAVY)
-        val best = b.history.fold(0 to 0) { (cur, mx), ok -> if (ok) (cur + 1).let { it to max(mx, it) } else 0 to mx }.second
+        val best = b.bestStreak
+        val history = if (b.answered == 0) p.history else (listOf(RoundHistory(java.util.UUID.randomUUID().toString(), s.now,
+            RoundResult(RoundMode.Blitz, b.correct, b.answered, b.delta, 0, 0, b.delta, 0, true, best, b.records))) + p.history).take(20)
         return s.copy(
-            profile = p, blitz = null,
+            profile = p.copy(history = history), blitz = null,
             blitzResult = BlitzResult(b.correct, b.answered, b.delta, best, record),
             stack = s.stack.filterNot { it == Screen.Blitz } + Screen.BlitzResult,
         )

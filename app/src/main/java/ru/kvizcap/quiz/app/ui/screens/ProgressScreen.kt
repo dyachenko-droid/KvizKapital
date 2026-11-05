@@ -104,6 +104,8 @@ fun ProgressScreen(state: AppState, dispatch: (Intent) -> Unit) {
                 }
             } else Text(stringResource(R.string.chart_empty), style = Type.small, color = c.ink2)
         }
+        ru.kvizcap.quiz.app.ui.components.BigButton(stringResource(R.string.native_history), modifier = Modifier.fillMaxWidth(), kind = ru.kvizcap.quiz.app.ui.components.ButtonKind.SOFT) { dispatch(Intent.Open(ru.kvizcap.quiz.app.mvi.Screen.History)) }
+        TrainingSuggestion(state, dispatch)
         val rank = Ranks.of(assets)
         val next = Ranks.all.getOrNull(rank.index + 1)
         Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(22.dp)).background(c.hero).padding(14.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {

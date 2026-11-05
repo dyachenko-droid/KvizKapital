@@ -1,0 +1,28 @@
+<resources>
+    <string name="native_backup">İrəliləyişin ehtiyat nüsxəsi</string>
+    <string name="native_export">İrəliləyişi fayla saxla</string>
+    <string name="native_import">Fayldan bərpa et</string>
+    <string name="native_backup_hint">Nüsxəyə məhəllə, karyera, statistika, raund tarixçəsi və ayarlar daxildir. Faylı kompüterdə və ya buludda saxlayın. Bərpadan əvvəl məzmunu yoxlaya bilərsiniz.</string>
+    <string name="native_export_ok">Ehtiyat nüsxə saxlanıldı</string>
+    <string name="native_transfer_error">Fayl saxlanılmadı. Boş yeri yoxlayıb yenidən cəhd edin.</string>
+    <string name="native_invalid_backup">Fayl zədələnib və ya KvizKapital nüsxəsi deyil. Cari irəliləyiş dəyişməyib.</string>
+    <string name="native_incompatible_backup">Bu nüsxə versiyası dəstəklənmir. Tətbiqi yeniləyin. Cari irəliləyiş dəyişməyib.</string>
+    <string name="native_preview_title">İrəliləyiş bərpa edilsin?</string>
+    <string name="native_preview">Oyunçu: %1$s\nKapital: %2$s\nKaryera ulduzları: %3$d\nTarixçədəki raundlar: %4$d\nSaxlanılıb: %5$s\nTətbiq versiyası: %6$s</string>
+    <string name="native_replace_text">Cari irəliləyiş fayldakı məlumatlarla əvəz olunacaq. Əvvəlcə cari irəliləyişin ayrıca nüsxəsini saxlamağınız tövsiyə olunur.</string>
+    <string name="native_replace">Bərpa et</string>
+    <string name="native_cancel">Ləğv et</string>
+    <string name="native_history">Raund tarixçəsi</string>
+    <string name="native_history_empty">Son 20 tamamlanmış raund burada görünəcək. Cavabları və izahları görmək üçün nəticəyə toxunun.</string>
+    <string name="native_history_result">%2$d sualdan %1$d · %3$s K</string>
+    <string name="native_train_topic">Məşq et: %1$s</string>
+    <string name="native_topic_errors">Səhvlər: %1$s</string>
+    <string name="native_train_hint">Tövsiyə ən azı beş cavaba əsaslanır. Əvvəlcə səhvləri təkrarlayacaq, sonra digər sualları əlavə edəcəyik.</string>
+    <string name="native_resume_title">Yarımçıq raund saxlanılıb</string>
+    <string name="native_resume_text">Eyni sualdan qalan vaxtla davam edilsin? Ləğv etsəniz, raund mükafatı verilməyəcək, kömək xərcləri saxlanılacaq.</string>
+    <string name="native_resume">Davam et</string>
+    <string name="native_abandon">Raundu ləğv et</string>
+    <string name="native_storage_error">İrəliləyiş saxlanılmadı və ya oxunmadı</string>
+    <string name="native_storage_hint">Məlumatlar sıfırlanmayıb. Cihazda yer boşaldıb yenidən cəhd edin. Tətbiqi silməyin.</string>
+    <string name="native_retry">Yenidən cəhd et</string>
+</resources>

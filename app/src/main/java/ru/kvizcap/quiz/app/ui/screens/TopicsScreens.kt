@@ -176,7 +176,7 @@ fun TopicScreen(state: AppState, topic: TopicId, dispatch: (Intent) -> Unit) {
             }
         }
         Row(Modifier.fillMaxWidth().navigationBarsPadding().padding(16.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            if (mistakes > 0) BigButton(stringResource(R.string.errors_button, mistakes), kind = ButtonKind.CORAL) { dispatch(Intent.StartErrors) }
+            if (mistakes > 0) BigButton(stringResource(R.string.errors_button, mistakes), kind = ButtonKind.CORAL) { dispatch(Intent.StartErrors(topic)) }
             BigButton(stringResource(R.string.start_10), Modifier.weight(1f)) { dispatch(Intent.StartTopic(topic, state.topicDifficulty)) }
         }
     }

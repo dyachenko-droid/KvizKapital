@@ -236,7 +236,7 @@ private fun MiniStat(value: String, label: String, modifier: Modifier) {
 
 @Composable
 fun ReviewScreen(state: AppState, dispatch: (Intent) -> Unit) {
-    val res = state.result ?: return
+    val res = (if (state.screen == Screen.HistoryReview) state.historyReview?.result else state.result) ?: return
     val c = App.c
     var open by remember(res) { mutableStateOf(res.records.indexOfFirst { !it.correct }) }
     Column(Modifier.fillMaxSize().background(c.bg)) {
@@ -270,10 +270,12 @@ fun ReviewScreen(state: AppState, dispatch: (Intent) -> Unit) {
                     }
                     AnimatedVisibility(expanded, enter = fadeIn() + expandVertically()) {
                         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                            if (!rec.correct && rec.chosen != null) Text(stringResource(R.string.your_answer, rec.chosen), style = Type.small, color = c.coralInk)
-                            Text(stringResource(R.string.right_answer, rec.correctAnswer), style = Type.small, color = c.mintInk)
+                            val chosenText = rec.chosenTruth?.let { stringResource(if (it) R.string.answer_true else R.string.answer_false) } ?: rec.chosen
+                            val correctText = rec.correctTruth?.let { stringResource(if (it) R.string.answer_true else R.string.answer_false) } ?: rec.correctAnswer
+                            if (!rec.correct && chosenText != null) Text(stringResource(R.string.your_answer, chosenText), style = Type.small, color = c.coralInk)
+                            Text(stringResource(R.string.right_answer, correctText), style = Type.small, color = c.mintInk)
                             Text(rec.explanation, style = Type.body, color = c.ink2)
-                            if (!rec.correct) Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                            if (!rec.correct && rec.chosenTruth == null) Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                                 Glyph(Glyphs.REDO, c.priSoftInk, 16.dp)
                                 Text(stringResource(R.string.added_to_errors), style = Type.tiny, color = c.priSoftInk)
                             }

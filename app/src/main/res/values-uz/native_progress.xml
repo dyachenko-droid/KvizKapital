@@ -1,0 +1,28 @@
+<resources>
+    <string name="native_backup">Natijalarning zaxira nusxasi</string>
+    <string name="native_export">Natijalarni faylga saqlash</string>
+    <string name="native_import">Fayldan tiklash</string>
+    <string name="native_backup_hint">Nusxa kvartal, karyera, statistika, raundlar tarixi va sozlamalarni saqlaydi. Faylni kompyuterga yoki bulutga saqlang. Tiklashdan oldin tarkibini tekshirishingiz mumkin.</string>
+    <string name="native_export_ok">Zaxira nusxa saqlandi</string>
+    <string name="native_transfer_error">Fayl saqlanmadi. Boʻsh joyni tekshirib, qayta urinib koʻring.</string>
+    <string name="native_invalid_backup">Fayl buzilgan yoki KvizKapital nusxasi emas. Joriy natijalar oʻzgarmadi.</string>
+    <string name="native_incompatible_backup">Bu nusxa versiyasi qoʻllab-quvvatlanmaydi. Ilovani yangilang. Joriy natijalar oʻzgarmadi.</string>
+    <string name="native_preview_title">Natijalar tiklansinmi?</string>
+    <string name="native_preview">Oʻyinchi: %1$s\nKapital: %2$s\nKaryera yulduzlari: %3$d\nTarixdagi raundlar: %4$d\nSaqlangan: %5$s\nIlova versiyasi: %6$s</string>
+    <string name="native_replace_text">Joriy natijalar fayldagi maʼlumotlar bilan almashtiriladi. Avval joriy natijalarning alohida nusxasini saqlash tavsiya etiladi.</string>
+    <string name="native_replace">Tiklash</string>
+    <string name="native_cancel">Bekor qilish</string>
+    <string name="native_history">Raundlar tarixi</string>
+    <string name="native_history_empty">Bu yerda soʻnggi 20 ta tugallangan raund koʻrinadi. Javob va izohlarni koʻrish uchun natijani bosing.</string>
+    <string name="native_history_result">%2$d tadan %1$d · %3$s K</string>
+    <string name="native_train_topic">Mashq: %1$s</string>
+    <string name="native_topic_errors">Xatolar: %1$s</string>
+    <string name="native_train_hint">Tavsiya kamida beshta javobga asoslanadi. Avval xatolarni takrorlaymiz, keyin boshqa savollarni qoʻshamiz.</string>
+    <string name="native_resume_title">Tugallanmagan raund bor</string>
+    <string name="native_resume_text">Oʻsha savoldan qolgan vaqt bilan davom etasizmi? Bekor qilsangiz, mukofot berilmaydi, yordam xarajatlari saqlanadi.</string>
+    <string name="native_resume">Davom etish</string>
+    <string name="native_abandon">Raundni bekor qilish</string>
+    <string name="native_storage_error">Natijalarni saqlash yoki oʻqish imkoni boʻlmadi</string>
+    <string name="native_storage_hint">Maʼlumotlar oʻchirilmagan. Qurilmada joy boʻshatib, qayta urinib koʻring. Ilovani oʻchirmang.</string>
+    <string name="native_retry">Qayta urinish</string>
+</resources>

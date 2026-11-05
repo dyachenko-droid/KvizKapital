@@ -222,7 +222,7 @@
     <string name="data">Маълумот</string>
     <string name="reset">Тоза кардани пешрафт</string>
     <string name="reset_sub">Капитал, маҳалла ва дастовардҳо</string>
-    <string name="footer">КвизКапитал 1.0 · капитали бозӣ виртуалӣ аст: онро харидан ё баровардан мумкин нест</string>
+    <string name="footer">КвизКапитал %1$s · капитали бозӣ виртуалӣ аст: онро харидан ё баровардан мумкин нест</string>
 
     <string name="seconds_short">%1$d с</string>
     <string name="why">Чаро чунин?</string>

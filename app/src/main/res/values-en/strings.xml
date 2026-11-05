@@ -222,7 +222,7 @@
     <string name="data">Data</string>
     <string name="reset">Reset progress</string>
     <string name="reset_sub">Capital, district and achievements</string>
-    <string name="footer">KvizKapital 1.0 · in-game capital is virtual: it cannot be bought or withdrawn</string>
+    <string name="footer">KvizKapital %1$s · in-game capital is virtual: it cannot be bought or withdrawn</string>
 
     <string name="seconds_short">%1$d s</string>
     <string name="why">Why so?</string>

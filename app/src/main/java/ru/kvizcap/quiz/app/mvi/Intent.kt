@@ -11,15 +11,24 @@ sealed interface Intent {
     data object Back : Intent
     data object Tick : Intent
     data object Foreground : Intent
+    data object Background : Intent
+    data class OfferResume(val session: ru.kvizcap.quiz.app.data.SavedSession) : Intent
+    data class ResumeSaved(val round: RoundState?, val blitz: BlitzState?) : Intent
+    data object RetryStorage : Intent
+    data object ResumePending : Intent
+    data object AbandonSaved : Intent
+    data class OpenHistory(val id: String) : Intent
+    data class ImportProgress(val profile: Profile, val session: ru.kvizcap.quiz.app.data.SavedSession?, val language: String) : Intent
 
     data class FinishOnboarding(val name: String, val difficulty: Int, val interests: List<String>) : Intent
 
     data class StartCareer(val chapter: Int, val level: Int) : Intent
     data class StartTopic(val topic: TopicId, val difficulty: Difficulty) : Intent
     data class SetTopicDifficulty(val difficulty: Difficulty) : Intent
+    data class StartTraining(val topic: TopicId) : Intent
     data object StartQuick : Intent
     data object StartMarathon : Intent
-    data object StartErrors : Intent
+    data class StartErrors(val topic: TopicId? = null) : Intent
     data object StartDaily : Intent
     data object StartBlitz : Intent
     data object ContinueCareer : Intent

@@ -31,6 +31,7 @@ enum class Difficulty(val code: Char, @StringRes val title: Int, val mult: Doubl
     }
 }
 
+@kotlinx.serialization.Serializable(with = ChapterSerializer::class)
 data class Chapter(
     val index: Int,
     val topic: TopicId,

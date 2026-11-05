@@ -1,0 +1,28 @@
+<resources>
+    <string name="native_backup">Резервная копия прогресса</string>
+    <string name="native_export">Сохранить прогресс в файл</string>
+    <string name="native_import">Восстановить из файла</string>
+    <string name="native_backup_hint">В копию входят квартал, карьера, статистика, история раундов и настройки. Сохраните файл на компьютер или в облако. Перед восстановлением можно проверить содержимое копии.</string>
+    <string name="native_export_ok">Резервная копия сохранена</string>
+    <string name="native_transfer_error">Не удалось сохранить файл. Проверьте доступное место и попробуйте снова.</string>
+    <string name="native_invalid_backup">Файл повреждён или не является копией КвизКапитал. Текущий прогресс не изменён.</string>
+    <string name="native_incompatible_backup">Эта версия резервной копии не поддерживается. Обновите приложение. Текущий прогресс не изменён.</string>
+    <string name="native_preview_title">Восстановить прогресс?</string>
+    <string name="native_preview">Игрок: %1$s\nКапитал: %2$s\nЗвёзды карьеры: %3$d\nРаундов в истории: %4$d\nКопия от: %5$s\nВерсия приложения: %6$s</string>
+    <string name="native_replace_text">Текущий прогресс будет заменён содержимым файла. Перед заменой рекомендуется сохранить текущий прогресс отдельной копией.</string>
+    <string name="native_replace">Восстановить</string>
+    <string name="native_cancel">Отмена</string>
+    <string name="native_history">История раундов</string>
+    <string name="native_history_empty">Здесь появятся последние 20 завершённых раундов. Нажмите на результат, чтобы посмотреть ответы и объяснения.</string>
+    <string name="native_history_result">%1$d из %2$d · %3$s К</string>
+    <string name="native_train_topic">Потренировать: %1$s</string>
+    <string name="native_topic_errors">Ошибки: %1$s</string>
+    <string name="native_train_hint">Рекомендуем тему по результатам минимум пяти ответов. Сначала повторим ошибки, затем добавим другие вопросы.</string>
+    <string name="native_resume_title">Есть незавершённый раунд</string>
+    <string name="native_resume_text">Продолжить с того же вопроса и с оставшимся временем? При отмене награда за этот раунд не начислится, расходы на подсказки сохранятся.</string>
+    <string name="native_resume">Продолжить</string>
+    <string name="native_abandon">Отменить раунд</string>
+    <string name="native_storage_error">Не удалось сохранить или прочитать прогресс</string>
+    <string name="native_storage_hint">Данные не сброшены. Освободите место на устройстве и повторите попытку. Не удаляйте приложение.</string>
+    <string name="native_retry">Повторить</string>
+</resources>

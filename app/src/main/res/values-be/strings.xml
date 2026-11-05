@@ -226,7 +226,7 @@
     <string name="data">Даныя</string>
     <string name="reset">Скінуць прагрэс</string>
     <string name="reset_sub">Капітал, квартал і дасягненні</string>
-    <string name="footer">КвізКапітал 1.0 · капітал у гульні віртуальны: яго нельга купіць або вывесці</string>
+    <string name="footer">КвізКапітал %1$s · капітал у гульні віртуальны: яго нельга купіць або вывесці</string>
 
     <string name="seconds_short">%1$d с</string>
     <string name="why">Чаму так?</string>

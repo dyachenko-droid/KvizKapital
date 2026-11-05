@@ -1,0 +1,28 @@
+<resources>
+    <string name="native_backup">Прогрестің сақтық көшірмесі</string>
+    <string name="native_export">Прогресті файлға сақтау</string>
+    <string name="native_import">Файлдан қалпына келтіру</string>
+    <string name="native_backup_hint">Көшірмеде квартал, мансап, статистика, раундтар тарихы және баптаулар сақталады. Файлды компьютерге немесе бұлтқа сақтаңыз. Қалпына келтірмес бұрын мазмұнын тексеруге болады.</string>
+    <string name="native_export_ok">Сақтық көшірме сақталды</string>
+    <string name="native_transfer_error">Файл сақталмады. Бос орынды тексеріп, қайталап көріңіз.</string>
+    <string name="native_invalid_backup">Файл бүлінген немесе КвизКапитал көшірмесі емес. Ағымдағы прогресс өзгерген жоқ.</string>
+    <string name="native_incompatible_backup">Көшірменің бұл нұсқасына қолдау жоқ. Қолданбаны жаңартыңыз. Ағымдағы прогресс өзгерген жоқ.</string>
+    <string name="native_preview_title">Прогресті қалпына келтіру керек пе?</string>
+    <string name="native_preview">Ойыншы: %1$s\nКапитал: %2$s\nМансап жұлдыздары: %3$d\nТарихтағы раундтар: %4$d\nСақталған: %5$s\nҚолданба нұсқасы: %6$s</string>
+    <string name="native_replace_text">Ағымдағы прогресс файлдағы деректермен ауыстырылады. Алдымен ағымдағы прогрестің бөлек көшірмесін сақтауды ұсынамыз.</string>
+    <string name="native_replace">Қалпына келтіру</string>
+    <string name="native_cancel">Бас тарту</string>
+    <string name="native_history">Раундтар тарихы</string>
+    <string name="native_history_empty">Мұнда соңғы 20 аяқталған раунд көрсетіледі. Жауаптар мен түсіндірмелерді көру үшін нәтижені басыңыз.</string>
+    <string name="native_history_result">%2$d сұрақтың %1$d жауабы · %3$s К</string>
+    <string name="native_train_topic">Жаттығу: %1$s</string>
+    <string name="native_topic_errors">Қателер: %1$s</string>
+    <string name="native_train_hint">Ұсыныс кемінде бес жауапқа негізделген. Алдымен қателерді қайталап, содан кейін басқа сұрақтарды қосамыз.</string>
+    <string name="native_resume_title">Аяқталмаған раунд бар</string>
+    <string name="native_resume_text">Сол сұрақтан қалған уақытпен жалғастыру керек пе? Бас тартсаңыз, раунд сыйлығы берілмейді, көмекке кеткен шығын сақталады.</string>
+    <string name="native_resume">Жалғастыру</string>
+    <string name="native_abandon">Раундтан бас тарту</string>
+    <string name="native_storage_error">Прогресті сақтау немесе оқу мүмкін болмады</string>
+    <string name="native_storage_hint">Деректер өшірілген жоқ. Құрылғыда орын босатып, қайталап көріңіз. Қолданбаны жоймаңыз.</string>
+    <string name="native_retry">Қайталау</string>
+</resources>
